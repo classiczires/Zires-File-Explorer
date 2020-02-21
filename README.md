@@ -6,10 +6,11 @@
 This file manager was built in 2013 for Windows Phone 8.0
 
 ## Technologies
-Windows phone<br/>
-Language: C#<br/>
+<b>Windows phone</b><br/>
+Language: <b>C#</b><br/>
 <b>MVVM</b> architecture is used to develop this program.<br/>
-Uses <b>Data binding</b> to bind lists to display layers.
+Uses <b>Data binding</b> to bind lists to display layers.<br/>
+Create views with <b>xaml</b> (<b>Pivot</b>, <b>Grid</b>, <b>ScrollViewer</b>, <b>Style</b>, <b>VisualStateManager</b>, <b>Storyboard</b>, <b>LongListSelector</b>)
 
 
 ## Feature
