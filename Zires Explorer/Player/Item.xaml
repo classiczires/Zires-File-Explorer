@@ -1,0 +1,75 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone" x:Name="itemControl" x:Class="Zires_Explorer.Player.Item"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"  Margin="0,0,0,8"
+    d:DesignHeight="480" d:DesignWidth="480" Height="70">
+    
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <SolidColorBrush Color="Black" Opacity="0.6"/>
+        </Grid.Background>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="Selected">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="selected" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid x:Name="selected" Visibility="Collapsed">
+            <Grid.Background>
+                <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+            </Grid.Background>
+        </Grid>
+        <Button x:Name="item" BorderThickness="0" Height="70" ClickMode="Release" Foreground="{x:Null}">
+            <toolkit:ContextMenuService.ContextMenu>
+                <toolkit:ContextMenu>
+                    <toolkit:MenuItem Header="Rename"/>
+                    <toolkit:MenuItem Header="Delete"/>
+                    <toolkit:MenuItem Header="Details"/>
+                </toolkit:ContextMenu>
+            </toolkit:ContextMenuService.ContextMenu>
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid Height="70">
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="sellectedcolor" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="sellectedcolor" BorderThickness="0" Visibility="Collapsed" BorderBrush="{x:Null}" Background="{StaticResource PhoneAccentBrush}"/>
+
+                        <Image x:Name="Image" HorizontalAlignment="Left" Width="70" Source="/Assets/PlayerIcons/Symbol Music.png"/>
+                        <TextBlock Text="{Binding Name}" FontFamily="Segoe WP SemiLight" FontSize="27" Padding="10,0,0,0" Margin="70,0,130,30" Foreground="White" />
+                        <TextBlock Text="{Binding Artist}" Margin="70,35,10,0" FontSize="22" Padding="20,0,0,0" Foreground="#FF999999"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,6,10,37" HorizontalAlignment="Right">
+                            <TextBlock Text="{Binding Duration.Hours, StringFormat=' \{0:D1\}:'}" FontFamily="Segoe WP" HorizontalAlignment="Right" TextAlignment="Right" Margin="0,0,-6,0" Foreground="White"/>
+                            <TextBlock Text="{Binding Duration.Minutes, StringFormat=' \{0:D2\}:'}" FontFamily="Segoe WP" HorizontalAlignment="Right" TextAlignment="Right" Margin="0,0,-6,0" Foreground="White"/>
+                            <TextBlock Text="{Binding Duration.Seconds, StringFormat=' \{0:D2\}'}" FontFamily="Segoe WP" HorizontalAlignment="Right" TextAlignment="Right" Foreground="White"/>
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+    </Grid>
+</UserControl>

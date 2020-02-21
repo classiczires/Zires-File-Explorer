@@ -1,0 +1,14 @@
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\ARM\Debug\Zires Explorer.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\ARM\Debug\Zires Explorer.pdb
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\ARM\Debug\AppManifest.xaml
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\ARM\Debug\Properties\WMAppManifest.xml
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\ARM\Debug\Zires_Explorer_Debug_ARM.xap
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\ARM\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\ARM\Debug\App.g.cs
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\ARM\Debug\MainPage.g.cs
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\ARM\Debug\Zires Explorer.g.resources
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\ARM\Debug\Zires_Explorer.Resources.AppResources.resources
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\ARM\Debug\Zires Explorer.csproj.GenerateResource.Cache
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\ARM\Debug\Zires Explorer.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\ARM\Debug\Zires Explorer.pdb
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\ARM\Debug\XapCacheFile.xml

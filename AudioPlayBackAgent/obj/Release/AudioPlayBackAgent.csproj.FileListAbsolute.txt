@@ -1,0 +1,12 @@
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\AudioPlayBackAgent\Bin\Release\AudioPlayBackAgent.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\AudioPlayBackAgent\Bin\Release\AudioPlayBackAgent.pdb
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\AudioPlayBackAgent\obj\Release\AudioPlayBackAgent.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\AudioPlayBackAgent\obj\Release\AudioPlayBackAgent.pdb
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\AudioPlayBackAgent\Bin\Release\AudioPlayBackAgent.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\AudioPlayBackAgent\Bin\Release\AudioPlayBackAgent.pdb
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\AudioPlayBackAgent\obj\Release\AudioPlayBackAgent.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\AudioPlayBackAgent\obj\Release\AudioPlayBackAgent.pdb
+D:\Windows Phone\Zires Explorer\AudioPlayBackAgent\Bin\Release\AudioPlayBackAgent.dll
+D:\Windows Phone\Zires Explorer\AudioPlayBackAgent\Bin\Release\AudioPlayBackAgent.pdb
+D:\Windows Phone\Zires Explorer\AudioPlayBackAgent\obj\Release\AudioPlayBackAgent.dll
+D:\Windows Phone\Zires Explorer\AudioPlayBackAgent\obj\Release\AudioPlayBackAgent.pdb

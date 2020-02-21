@@ -1,0 +1,92 @@
+﻿<phone:PhoneApplicationPage x:Name="AlbumPage"
+    x:Class="Zires_Explorer.Player.Album"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:local="clr-namespace:Zires_Explorer.Player"    
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False" Background="Black">
+    <phone:PhoneApplicationPage.Projection>
+        <PlaneProjection x:Name="planeProjection" GlobalOffsetZ="0"/>
+    </phone:PhoneApplicationPage.Projection>
+
+    <phone:PhoneApplicationPage.Resources>
+        <Storyboard x:Name="loadList" Completed="loadList_Completed">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ListPlaneProjection" Storyboard.TargetProperty="GlobalOffsetX">
+                <EasingDoubleKeyFrame KeyTime="0" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimation Storyboard.TargetName="songsOfAlbum" Storyboard.TargetProperty="Opacity" From="0" To="100" Duration="00:00:28"/>
+
+        </Storyboard>
+    </phone:PhoneApplicationPage.Resources>
+
+    <phone:PhoneApplicationPage.Triggers>
+        <EventTrigger>
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="planeProjection" Storyboard.TargetProperty="GlobalOffsetZ">
+                        <EasingDoubleKeyFrame KeyTime="0" Value="-300"/>
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                            <EasingDoubleKeyFrame.EasingFunction>
+                                <QuarticEase EasingMode="EaseOut"/>
+                            </EasingDoubleKeyFrame.EasingFunction>
+                        </EasingDoubleKeyFrame>
+                    </DoubleAnimationUsingKeyFrames>
+
+                    <DoubleAnimation Storyboard.TargetName="AlbumPage" Storyboard.TargetProperty="Opacity" From="0" To="100" Duration="00:00:28"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </phone:PhoneApplicationPage.Triggers>
+
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Black">
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Margin="12,10,12,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="71*"/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="albumArt" HorizontalAlignment="Left" Width="200" Height="200" VerticalAlignment="Top" Source="/Assets/ExplorerIcons/Other/ZiresPlayer.png"/>
+
+            <StackPanel Margin="208,0,0,70" FlowDirection="LeftToRight">
+                <TextBlock x:Name="albumName" FontSize="24" TextWrapping="Wrap" MaxHeight="64" Margin="0,10,0,0" Foreground="White"/>
+                <TextBlock x:Name="AlbumArtist" FontSize="20" MaxHeight="59" TextWrapping="Wrap" Foreground="#FF999999"/>
+            </StackPanel>
+            <TextBlock x:Name="albumDuration" Margin="208,136,0,29" FontSize="22" FontFamily="Segoe WP SemiLight" Foreground="White"/>
+            <TextBlock x:Name="songsNumbers" Margin="208,165,0,0" FontSize="22" FontFamily="Segoe WP SemiLight" Foreground="White"/>
+
+            <phone:LongListSelector x:Name="songsOfAlbum" Margin="0,10" Grid.Row="1" SelectionChanged="songsOfAlbum_SelectionChanged" Loaded="songsOfAlbum_Loaded">
+                <phone:LongListSelector.Projection>
+                    <PlaneProjection x:Name="ListPlaneProjection" GlobalOffsetX="100"/>
+                </phone:LongListSelector.Projection>
+                <phone:LongListSelector.ItemTemplate>
+                    <DataTemplate>
+                        <local:Item/>
+                    </DataTemplate>
+                </phone:LongListSelector.ItemTemplate>
+            </phone:LongListSelector>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,855 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:coding4fun="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    xmlns:local="clr-namespace:Zires_Explorer"
+    xmlns:class="clr-namespace:Microsoft.Phone.Maps.Toolkit;assembly=Microsoft.Phone.Controls.Toolkit" xmlns:Primitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:toolkitPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls.Toolkit" xmlns:es="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing" xmlns:edc="clr-namespace:Microsoft.Expression.Controls;assembly=Microsoft.Expression.Drawing" xmlns:em="clr-namespace:Microsoft.Expression.Media;assembly=Microsoft.Expression.Drawing" x:Name="Zires"
+    x:Class="Zires_Explorer.MainPage"
+    mc:Ignorable="d"
+    Foreground="{x:Null}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    BackKeyPress="PhoneApplicationPage_BackKeyPress"
+    toolkit:TiltEffect.IsTiltEnabled="True"
+    OrientationChanged="PhoneApplicationPage_OrientationChanged"
+    Loaded="Zires_Loaded" shell:SystemTray.IsVisible="True"
+    >
+
+
+
+    <phone:PhoneApplicationPage.Resources>
+        <Storyboard x:Name="Open_OpenWithAnimation">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="list" Storyboard.TargetProperty="(FrameworkElement.IsHitTestVisible)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="true"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="false"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="openWithList" Storyboard.TargetProperty="(FrameworkElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="OpenWithForAnimation" Storyboard.TargetProperty="GlobalOffsetY">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-768">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Name="Close_OpenWithAnimation">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="list" Storyboard.TargetProperty="(FrameworkElement.IsHitTestVisible)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="false"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="true"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="openWithList" Storyboard.TargetProperty="(FrameworkElement.Visibility)" BeginTime="0:0:0.4">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="OpenWithForAnimation" Storyboard.TargetProperty="GlobalOffsetY">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-768"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+        <Storyboard x:Name="Open_MainMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="planeProjectionMainMenu" Storyboard.TargetProperty="GlobalOffsetX">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame x:Name="easingDoubleKeyFrame_1" KeyTime="0:0:0.4">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="menuScroollContentPlaneProjection" Storyboard.TargetProperty="GlobalOffsetX">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Name="Close_MainMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="planeProjectionMainMenu" Storyboard.TargetProperty="GlobalOffsetX">
+                <EasingDoubleKeyFrame x:Name="easingDoubleKeyFrame_2" KeyTime="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="menuScroollContentPlaneProjection" Storyboard.TargetProperty="GlobalOffsetX" BeginTime="0:0:0.3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+        <Storyboard x:Name="Open_HoldMenu">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="menuControl" Storyboard.TargetProperty="(FrameworkElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="menuControl" Storyboard.TargetProperty="(FrameworkElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="100">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="planeprojectionHoldMenu" Storyboard.TargetProperty="LocalOffsetZ">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Name="Close_HoldMenu">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="menuControl" Storyboard.TargetProperty="(FrameworkElement.Visibility)" BeginTime="0:0:0.3">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="menuControl" Storyboard.TargetProperty="(FrameworkElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="planeprojectionHoldMenu" Storyboard.TargetProperty="LocalOffsetZ">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-100">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+        <Storyboard x:Name="Open_Start">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="startControl" Storyboard.TargetProperty="(FrameworkElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="startControl" Storyboard.TargetProperty="(FrameworkElement.Opacity)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="0"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="80"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="startPlaneProjection" Storyboard.TargetProperty="GlobalOffsetZ">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="startPlaneProjection" Storyboard.TargetProperty="GlobalOffsetX">
+                <EasingDoubleKeyFrame KeyTime="0" Value="50"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="startPlaneProjection" Storyboard.TargetProperty="RotationY">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-20"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Style x:Name="longListSelectorItem" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <!--<Storyboard>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" 
+                                                                           Storyboard.TargetName="glow" 
+                                                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" 
+                                                                      Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>-->
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" 
+        										Storyboard.TargetName="selectedColor" 
+        										Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.000" 
+        											Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <Border x:Name="selectedColor" BorderThickness="2" Opacity="0" BorderBrush="#FF0080FF">
+                                <Border.Background>
+                                    <SolidColorBrush Color="#FF0080FF" Opacity="0.5"/>
+                                </Border.Background>
+                            </Border>
+
+                            <StackPanel x:Name="Item" Tag="{Binding Tag}" Margin="6,0" Width="{Binding Width, ElementName=list}" Hold="Item_Hold" ManipulationStarted="Item_ManipulationStarted" ManipulationCompleted="Item_ManipulationCompleted" ManipulationDelta="Item_ManipulationDelta">
+                                <StackPanel.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Offset="0.995"/>
+                                        <GradientStop Color="{StaticResource PhoneForegroundColor}" Offset="0.995"/>
+                                    </LinearGradientBrush>
+                                </StackPanel.Background>
+
+                                <TextBlock x:Name="name" TextWrapping="NoWrap" Text="{Binding Name}" Margin="114,0,10,0" FontSize="28" Style="{StaticResource PhoneTextNormalStyle}" TextOptions.TextHintingMode="Fixed" FontFamily="Segoe WP SemiLight" Foreground="{StaticResource PhoneForegroundBrush}" TextTrimming="None"/>
+                                <Image x:Name="source" Height="90" Margin="4,-36,0,0" Source="{Binding Source}" Stretch="Uniform" HorizontalAlignment="Left" Width="90"/>
+
+                                <TextBlock x:Name="type" TextWrapping="NoWrap" Text="{Binding Type}" Margin="114,-87,10,0" Height="32" FontSize="24" Style="{StaticResource DetailsTextBlock}" Foreground="#FFA4A4A4"/>
+                                <TextBlock x:Name="size" TextWrapping="NoWrap" Text="{Binding Size}" Margin="114,-35,10,0" Height="32" FontSize="24" Style="{StaticResource DetailsTextBlock}" FlowDirection="LeftToRight" Padding="0" TextAlignment="Right" Foreground="#FFA4A4A4"/>
+                                <TextBlock x:Name="path" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Path}" VerticalAlignment="Top" Margin="0" Foreground="{StaticResource PhoneForegroundBrush}" TextAlignment="Center" Width="100" Visibility="{Binding Visibility, ElementName=Details_view}" Height="Auto" FontSize="22" FontFamily="Segoe WP SemiLight" MaxHeight="59"/>
+
+                            </StackPanel>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
+
+
+
+
+
+    <phone:PhoneApplicationPage.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </phone:PhoneApplicationPage.FontFamily>
+    <phone:PhoneApplicationPage.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </phone:PhoneApplicationPage.FontSize>
+
+
+    <phone:PhoneApplicationPage.Triggers>
+        <EventTrigger>
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="Zires" 
+                                     Storyboard.TargetProperty="Opacity" From="0" To="100" Duration="00:00:25"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </phone:PhoneApplicationPage.Triggers>
+
+
+
+
+
+    <Grid x:Name="LayoutRoot">
+
+
+        <!-- LOCALIZATION NOTE:
+            To localize the displayed strings copy their values to appropriately named
+            keys in the app's neutral language resource file (AppResources.resx) then
+            replace the hard-coded text value between the attributes' quotation marks
+            with the binding clause whose path points to that string name.
+
+            For example:
+
+                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+
+            This binding points to the template's string resource named "ApplicationTitle".
+
+            Adding supported languages in the Project Properties tab will create a
+            new resx file per language that can carry the translated values of your
+            UI strings. The binding in these examples will cause the value of the
+            attributes to be drawn from the .resx file that matches the
+            CurrentUICulture of the app at run time.
+         -->
+
+
+
+        <!--TitlePanel contains the name of the application and page title-->
+
+
+        <Grid x:Name="ContentPanel" ManipulationStarted="ContentPanel_ManipulationStarted">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition x:Name="seperator" Height="0"/>
+                </Grid.RowDefinitions>
+                <Grid x:Name="explorer_1" Margin="0,50,0,0">
+                    <phone:LongListSelector x:Name="list" Padding="0" HorizontalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Stretch" SelectionChanged="list_SelectionChanged" GridCellSize="116,15" ScrollViewer.HorizontalScrollBarVisibility="Auto" PropertyChanged="list_PropertyChanged" IsEnabled="True" GotFocus="list_GotFocus" Loaded="list_Loaded">
+                        <phone:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <Button Style="{StaticResource longListSelectorItem}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+                    </phone:LongListSelector>
+
+                    <toolkit:LongListMultiSelector x:Name="selectionList" Padding="0" HorizontalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Stretch" Background="Black" SelectionChanged="selectionList_SelectionChanged" GridCellSize="116,146" EnforceIsSelectionEnabled="True" IsSelectionEnabled="True" Visibility="Collapsed">
+                        <toolkit:LongListMultiSelector.ItemTemplate>
+                            <DataTemplate>
+                                <Button Style="{StaticResource longListSelectorItem}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                            </DataTemplate>
+                        </toolkit:LongListMultiSelector.ItemTemplate>
+                    </toolkit:LongListMultiSelector>
+                </Grid>
+
+
+
+                <Grid Height="50" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" ManipulationDelta="Grid_ManipulationDelta" ManipulationCompleted="Grid_ManipulationCompleted" ManipulationStarted="Grid_ManipulationStarted" Background="{StaticResource PhoneBackgroundBrush}" Grid.Row="1" Margin="0,0,0,-10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <coding4fun:RoundButton x:Name="home_2" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="56" Click="home_Click" ImageSource="/Assets/ExplorerIcons/Other/Symbol Home.png" Margin="-6,5,0,-5" Padding="0" ButtonHeight="63" ButtonWidth="63"/>
+
+                    <TextBox x:Name="pathPanel_2" Margin="50,3,0,3" VerticalAlignment="Center" FontSize="25" Height="39" BorderThickness="0" IsReadOnly="True" Background="#BFFFFFFF" SelectionBackground="#FFFF1600" ToolTipService.ToolTip="sdcsdcsdcdddccd">
+                        <TextBox.Foreground>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                        </TextBox.Foreground>
+
+                        <TextBox.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal"/>
+                                            <VisualState x:Name="MouseOver"/>
+                                            <VisualState x:Name="Disabled">
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="MainBorder">
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentElement">
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                        <VisualStateGroup x:Name="FocusStates">
+                                            <VisualState x:Name="Focused">
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="MainBorder">
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneAccentBrush}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentElement">
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneBackgroundBrush}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Unfocused"/>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <Border x:Name="MainBorder" BorderBrush="{StaticResource PhoneForegroundBrush}" BorderThickness="0" />
+                                    <Border BorderBrush="Transparent" Background="Transparent">
+
+                                        <ScrollViewer x:Name="ContentElement" BorderThickness="8,0" VerticalContentAlignment="Stretch" Margin="0" HorizontalContentAlignment="Stretch" LayoutUpdated="ContentElement_LayoutUpdated" TextInputUpdate="ContentElement_TextInputUpdate"/>
+
+                                    </Border>
+                                </Grid>
+                            </ControlTemplate>
+
+                        </TextBox.Template>
+                    </TextBox>
+                </Grid>
+
+                <Grid x:Name="explorer_2" Margin="0,50,0,-50" Grid.Row="1">
+                    <phone:LongListSelector x:Name="list_2" Padding="0" HorizontalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Stretch" GridCellSize="116,15" ScrollViewer.HorizontalScrollBarVisibility="Auto" IsEnabled="True" GotFocus="list_2_GotFocus" SelectionChanged="list_2_SelectionChanged" PropertyChanged="list_2_PropertyChanged" Margin="0,0,0,40">
+                        <phone:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <Button Style="{StaticResource longListSelectorItem}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+                    </phone:LongListSelector>
+
+                    <toolkit:LongListMultiSelector x:Name="selectionList_2" Padding="0" HorizontalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Stretch" Background="Black" SelectionChanged="selectionList_SelectionChanged" GridCellSize="116,146" EnforceIsSelectionEnabled="True" IsSelectionEnabled="True" Visibility="Collapsed">
+                        <toolkit:LongListMultiSelector.ItemTemplate>
+                            <DataTemplate>
+                                <Button Style="{StaticResource longListSelectorItem}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                            </DataTemplate>
+                        </toolkit:LongListMultiSelector.ItemTemplate>
+                    </toolkit:LongListMultiSelector>
+                </Grid>
+
+                <Rectangle Fill="{StaticResource PhoneAccentBrush}" VerticalAlignment="Top" Grid.Row="1" Height="4"/>
+                <ToggleButton x:Name="seperatorControler" Height="45" Margin="217,9,218,-14" VerticalAlignment="Top" ManipulationDelta="ToggleButton_ManipulationDelta" Grid.Row="1">
+                    <ToggleButton.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <!--<VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="sellectedcolor" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                    <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>-->
+                                        <VisualState x:Name="Checked">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="activePage" Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)">
+                                                    <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Bottom"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+
+                                <Border BorderBrush="{StaticResource PhoneForegroundBrush}" BorderThickness="0" CornerRadius="100" Background="{StaticResource PhoneAccentBrush}"/>
+
+                                <Ellipse Fill="White" Margin="7,19,29,18" Width="8" Height="8"/>
+                                <Ellipse Fill="White" Margin="17" Width="8" Height="8"/>
+                                <Ellipse Fill="White" Margin="30,19,7,18" Width="8" Height="8"/>
+
+
+
+                                <Rectangle x:Name="activePage" HorizontalAlignment="Center" Height="6" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="30" Margin="6.75,10,6.625,10" RenderTransformOrigin="0.5,0.5" StrokeThickness="0" Fill="White"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </ToggleButton.Template>
+                </ToggleButton>
+
+            </Grid>
+
+
+
+            <Grid Height="50" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" ManipulationDelta="Grid_ManipulationDelta" ManipulationCompleted="Grid_ManipulationCompleted" ManipulationStarted="Grid_ManipulationStarted" Background="{StaticResource PhoneBackgroundBrush}" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <coding4fun:RoundButton x:Name="home" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="56" Click="home_Click" ImageSource="/Assets/ExplorerIcons/Other/Symbol Home.png" Margin="-6,5,0,-5" Padding="0" ButtonHeight="63" ButtonWidth="63"/>
+
+                <TextBox x:Name="pathPanel" Margin="50,3,0,3" VerticalAlignment="Center" FontSize="25" Height="39" BorderThickness="0" IsReadOnly="True" Background="#BFFFFFFF" SelectionBackground="#FFFF1600">
+                    <TextBox.Foreground>
+                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                    </TextBox.Foreground>
+
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver"/>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="MainBorder">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentElement">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Focused">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="MainBorder">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneAccentBrush}"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentElement">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneBackgroundBrush}"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unfocused"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Border x:Name="MainBorder" BorderBrush="{StaticResource PhoneForegroundBrush}" BorderThickness="0" />
+                                <Border BorderBrush="Transparent" Background="Transparent">
+
+                                    <ScrollViewer x:Name="ContentElement" BorderThickness="8,0" VerticalContentAlignment="Stretch" Margin="0" HorizontalContentAlignment="Stretch" LayoutUpdated="ContentElement_LayoutUpdated" TextInputUpdate="ContentElement_TextInputUpdate"/>
+
+                                </Border>
+                            </Grid>
+                        </ControlTemplate>
+
+                    </TextBox.Template>
+                </TextBox>
+
+
+
+
+
+
+            </Grid>
+
+            <Grid x:Name="statusBar" Height="40" VerticalAlignment="Bottom">
+                <Grid.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.8"/>
+                </Grid.Background>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="49*"/>
+                    <ColumnDefinition Width="47*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="numbersOfItem" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" FontSize="28" Padding="9,0" FontFamily="Segoe WP Light" Margin="0,1,10,0" Foreground="{StaticResource PhoneForegroundBrush}"/>
+                <TextBlock x:Name="selectedItem" VerticalAlignment="Top" FontSize="28" Padding="2,0,9,0" FontFamily="Segoe WP SemiLight" Foreground="{StaticResource PhoneForegroundBrush}" Grid.Column="1" Height="38" Margin="10,1,0,0"/>
+            </Grid>
+        </Grid>
+
+
+
+        <Grid HorizontalAlignment="Right" Width="30" Margin="0,76,0,0" ManipulationStarted="Grid_ManipulationStarted_1" ManipulationDelta="Grid_ManipulationDelta_1" ManipulationCompleted="Grid_ManipulationCompleted_1">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0"/>
+            </Grid.Background>
+        </Grid>
+
+
+        <Grid x:Name="MainMenu" Tap="menu_Tap" UseLayoutRounding="True" Margin="730,0,-730,0">
+            <Grid.Projection>
+                <PlaneProjection x:Name="planeProjectionMainMenu" GlobalOffsetX="0"/>
+            </Grid.Projection>
+
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0"/>
+            </Grid.Background>
+            <ScrollViewer x:Name="menuScrooll" Background="#FF1F1F1F" BorderThickness="0" BorderBrush="{x:Null}" HorizontalAlignment="Right" Width="238">
+                <Grid Height="1421" Width="186">
+                    <Grid.Projection>
+                        <PlaneProjection x:Name="menuScroollContentPlaneProjection" GlobalOffsetX="200"/>
+                    </Grid.Projection>
+                    <TextBlock Text="View :" VerticalAlignment="Top" Margin="-12,7,136,0" Foreground="White" FontSize="22" FontFamily="Segoe WP SemiLight"/>
+                    <Button x:Name="Thumbnails_view" Content="Thumbnails" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-26,34,-38,0" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Height="88" Width="250" Padding="-42,5,0,6" Background="#FF3B3B42" Foreground="White" Click="Thumbnails_view_Click"/>
+                    <Button x:Name="Details_view" Content="Details" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-26,34,-38,0" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Height="88" Width="250" Padding="-109.6,5,0,6" Background="#FF3B3B42" Foreground="White" Click="Details_view_Click" Visibility="Collapsed"/>
+                    <Button x:Name="search" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-25,143,-39,0" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Height="80" Width="250" Padding="-110,5,0,6" Background="#FF3B3B42" Foreground="White" Click="search_Click"/>
+                    <Button x:Name="new_folder" Content="New folder" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-25,223,-39,0" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Height="80" Width="250" Padding="-50,5,0,6" Background="#FF3B3B42" Foreground="White" Click="new_folder_Click"/>
+                    <Button x:Name="cut" Content="Cut" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-25,324,-39,0" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Height="80" Width="250" Padding="-155,5,0,6" Background="#FF3B3B42" Foreground="White" Click="cut_Click" BorderBrush="White"/>
+                    <Button x:Name="copy" Content="Copy" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-25,404,-39,0" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Height="80" Width="250" Padding="-130,5,0,6" Background="#FF3B3B42" Foreground="White" Click="copy_Click"/>
+                    <Button x:Name="paste" Content="Paste" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-25,484,-39,0" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Height="80" Width="250" Padding="-130,5,0,6" Background="#FF3B3B42" Foreground="White" Click="paste_Click"/>
+                    <Button x:Name="delete" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-25,584,-39,0" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Height="80" Width="250" Padding="-115,5,0,6" Background="#FF3B3B42" Foreground="White" Click="delete_Click"/>
+                    <Button x:Name="rename" Content="Rename" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-25,664,-39,0" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Height="80" Width="250" Padding="-93,5,0,6" Background="#FF3B3B42" Foreground="White" Click="rename_Click"/>
+                    <Button x:Name="selectall" Content="Select all" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-25,764,-39,0" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Height="80" Width="250" Padding="-80,5,0,6" Background="#FF3B3B42" Foreground="White" Click="selectall_Click"/>
+                    <Button x:Name="selectnone" Content="Select none" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-26,844,-38,0" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Height="88" Width="250" Padding="-40,5,0,6" Background="#FF3B3B42" Foreground="White" Click="selectnone_Click"/>
+                    <Button x:Name="properties" Content="Properties" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-25,952,-39,0" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Height="88" Width="250" Padding="-65,5,0,6" Background="#FF3B3B42" Foreground="White" Click="properties_Click"/>
+                    <Button x:Name="pintostart" Content="Pin to start" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-25,1040,-39,0" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Height="88" Width="250" Padding="-55,5,0,6" Background="#FF3B3B42" Foreground="White" Click="pintostart_Click"/>
+                    <Button x:Name="refresh" Content="Refresh" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-25,1148,-39,0" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Height="88" Width="250" Padding="-100,5,0,6" Background="#FF3B3B42" Foreground="White" Click="refresh_Click"/>
+                    <Button x:Name="exit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-25,1324,-39,0" Width="250" Height="88" BorderThickness="0" FontSize="32" FontFamily="Segoe WP SemiLight" Padding="-155,5,0,6" Background="#FF3B3B42" Foreground="White" Click="exit_Click"/>
+                    <Rectangle HorizontalAlignment="Left" Height="2" Stroke="White" StrokeThickness="0" VerticalAlignment="Top" Width="238" Margin="-26,312,-26,0" Fill="#FF959595"/>
+                    <Rectangle HorizontalAlignment="Left" Height="2" Stroke="White" StrokeThickness="0" VerticalAlignment="Top" Width="238" Margin="-26,941,-26,0" Fill="#FF959595"/>
+                    <Rectangle HorizontalAlignment="Left" Height="2" Stroke="White" StrokeThickness="0" VerticalAlignment="Top" Width="238" Margin="-26,753,-26,0" Fill="#FF959595"/>
+                    <Rectangle HorizontalAlignment="Left" Height="2" Stroke="White" StrokeThickness="0" VerticalAlignment="Top" Width="238" Margin="-26,1136,-26,0" Fill="#FF959595"/>
+
+                    <Rectangle HorizontalAlignment="Left" Height="2" Stroke="White" StrokeThickness="0" VerticalAlignment="Top" Width="238" Margin="-26,573,-26,0" Fill="#FF959595"/>
+                    <Button x:Name="settings" Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-26,1236,-38,0" Height="88" Width="250" BorderThickness="0" Background="#FF3B3B42" FontSize="32" Padding="-79,5,10,6" FontFamily="Segoe WP SemiLight" Click="settings_Click" Foreground="White"/>
+                    <Rectangle HorizontalAlignment="Left" Height="2" Stroke="White" StrokeThickness="0" VerticalAlignment="Top" Width="238" Margin="-26,131,-26,0" Fill="#FF959595"/>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+
+        <ScrollViewer Margin="0,450,0,0" HorizontalScrollBarVisibility="Auto" Visibility="Collapsed">
+            <TextBlock x:Name="asd" HorizontalAlignment="Left" VerticalAlignment="Top" Width="480" FontSize="30" Foreground="White" Text="tgdgvgd idnidhnijdd dkjndkndikndjknjnc kmdk" TextWrapping="Wrap"/>
+        </ScrollViewer>
+
+
+        <Grid x:Name="openWithList" Height="768" VerticalAlignment="Top" Margin="0,768,0,-768" Visibility="Collapsed">
+            <Grid.Projection>
+                <PlaneProjection x:Name="OpenWithForAnimation" GlobalOffsetY="0"/>
+            </Grid.Projection>
+
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0"/>
+            </Grid.Background>
+
+            <Rectangle HorizontalAlignment="Center" Height="360" Stroke="{StaticResource PhoneAccentBrush}" StrokeThickness="2" VerticalAlignment="Top" Width="458" Margin="11,64,11,0" Fill="#FF343434"/>
+
+            <StackPanel Height="360" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Margin="11,64,11,0" HorizontalAlignment="Center" Width="458">
+                <Button x:Name="ziresPlayerButton" Content="Button" Margin="18,70,0,0" Height="200" Width="170" FontSize="25" Click="ziresPlayerButton_Click" HorizontalAlignment="Left">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" 
+													Storyboard.TargetName="selectedColor" 
+													Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                    <SplineDoubleKeyFrame KeyTime="00:00:00.000" 
+														Value="1"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+
+                                <Border x:Name="selectedColor" BorderThickness="2" Opacity="0" BorderBrush="#FF0080FF">
+                                    <Border.Background>
+                                        <SolidColorBrush Color="#FF0080FF" Opacity="0.5"/>
+                                    </Border.Background>
+                                </Border>
+
+                                <Image Width="120" Height="120" Margin="25,17,25,63" Source="/Assets/ExplorerIcons/Other/ZiresPlayer.png" Stretch="UniformToFill" />
+                                <TextBlock Text="Zires Player" Width="150" Height="40" TextAlignment="Center" Margin="10,151,10,9" FontFamily="Segoe WP SemiLight" FontSize="26" Foreground="White"/>
+                            </Grid>
+
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="phonePlayerButton" Content="Button" Margin="0,-200,18,0" Height="200" Width="170" Click="phonePlayerButton_Click" HorizontalAlignment="Right">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" 
+													Storyboard.TargetName="selectedColor" 
+													Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                    <SplineDoubleKeyFrame KeyTime="00:00:00.000" 
+														Value="1"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+
+                                <Border x:Name="selectedColor" BorderThickness="2" Opacity="0" BorderBrush="#FF0080FF">
+                                    <Border.Background>
+                                        <SolidColorBrush Color="#FF0080FF" Opacity="0.5"/>
+                                    </Border.Background>
+                                </Border>
+
+                                <Image Width="120" Height="120" Margin="25,17,25,63" Source="/Assets/ExplorerIcons/Applications/Windows Phone Player.PNG" Stretch="UniformToFill" />
+                                <TextBlock Text="Phone Player" Width="150" Height="40" TextAlignment="Center" Margin="10,151,10,9" FontSize="26" FontFamily="Segoe WP SemiLight" Foreground="White"/>
+                            </Grid>
+
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="playInBackground" Content="Play in background" Height="83" FontSize="30" BorderThickness="2" Click="playInBackground_Click" FontFamily="Segoe WP SemiLight" Padding="10,0,10,6" Margin="11,0,9,0">
+                    <Button.Foreground>
+                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                    </Button.Foreground>
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="{StaticResource PhoneBorderColor}"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.5"/>
+                    </Button.Background>
+                </Button>
+                <Rectangle Height="70" Stroke="{StaticResource PhoneAccentBrush}" StrokeThickness="2" Margin="0,-638,2,0">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF525253" Offset="0"/>
+                            <GradientStop Color="#FF1E1E21" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <coding4fun:RoundButton x:Name="openWithClose" Margin="0,-630,0,0" Height="82" FontSize="16" FontFamily="Segoe UI Semilight" BorderThickness="1" Click="openWithClose_Click" HorizontalAlignment="Right" Width="82" Background="{x:Null}" ButtonHeight="85" ButtonWidth="85" ImageSource="/Assets/AppBar/close.png">
+                    <coding4fun:RoundButton.Foreground>
+                        <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                    </coding4fun:RoundButton.Foreground>
+                    <coding4fun:RoundButton.BorderBrush>
+                        <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                    </coding4fun:RoundButton.BorderBrush>
+                </coding4fun:RoundButton>
+                <TextBlock TextWrapping="Wrap" Text="Open with :" Margin="12,-635,222,0" Height="52" FontFamily="Segoe WP SemiLight" FontSize="33" Foreground="White"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="menuControl" Width="250" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed">
+            <Grid.Projection>
+                <PlaneProjection x:Name="planeprojectionHoldMenu" GlobalOffsetZ="0" GlobalOffsetX="0" GlobalOffsetY="0"/>
+            </Grid.Projection>
+            <Border BorderThickness="5" BorderBrush="#FF0095EA">
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Border.Background>
+                <phone:LongListSelector x:Name="Menu" Background="{x:Null}" BorderThickness="0" SelectionChanged="Menu_SelectionChanged">
+                    <phone:LongListSelector.Foreground>
+                        <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}"/>
+                    </phone:LongListSelector.Foreground>
+                    <phone:LongListSelector.ItemTemplate>
+                        <DataTemplate>
+                            <Button x:Name="menuButton" Content="{Binding itemContent}" Height="65" FontSize="25" FontFamily="Segoe UI Semilight" Click="menuButton_Click">
+                                <Button.Foreground>
+                                    <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}"/>
+                                </Button.Foreground>
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Grid>
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualState x:Name="Normal"/>
+                                                    <VisualState x:Name="Pressed">
+                                                        <Storyboard>
+                                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" 
+																Storyboard.TargetName="selectedColor" 
+																Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                                <SplineDoubleKeyFrame KeyTime="00:00:00.000" 
+																	Value="1"/>
+                                                            </DoubleAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+
+                                            <Border BorderThickness="0,0,0,1" Background="{x:Null}" CornerRadius="0" BorderBrush="#FF5DF8FF"/>
+                                            <Border x:Name="selectedColor" Opacity="0" CornerRadius="0" BorderThickness="2" BorderBrush="#FF0080FF">
+                                                <Border.Background>
+                                                    <SolidColorBrush Color="#FF0080FF" Opacity="0.5"/>
+                                                </Border.Background>
+                                            </Border>
+                                            <Image Source="{Binding icon}" HorizontalAlignment="Left" Width="65" Height="65"/>
+                                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="85,0,0,0"/>
+
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </DataTemplate>
+                    </phone:LongListSelector.ItemTemplate>
+                </phone:LongListSelector>
+
+            </Border>
+        </Grid>
+
+        <Grid x:Name="startControl" Visibility="Collapsed">
+            <Grid.Background>
+                <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.8"/>
+            </Grid.Background>
+            <Grid x:Name="Start">
+                <Grid.Projection>
+                    <PlaneProjection x:Name="startPlaneProjection" GlobalOffsetX="50" GlobalOffsetZ="-100" RotationY="-20"/>
+                </Grid.Projection>
+                <phone:Pivot>
+                    <phone:PivotItem CacheMode="{x:Null}">
+                        <phone:PivotItem.Header>
+                            <TextBlock Text="Strat" FontSize="50"/>
+                        </phone:PivotItem.Header>
+                        <Grid>
+                            <toolkit:LongListMultiSelector x:Name="start">
+                                <toolkit:LongListMultiSelector.ItemTemplate>
+                                    <DataTemplate>
+                                        <Button>
+                                            <Button.Template>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Grid>
+                                                        <VisualStateManager.VisualStateGroups>
+                                                            <VisualStateGroup x:Name="CommonStates">
+                                                                <VisualState x:Name="Normal"/>
+                                                                <VisualState x:Name="Pressed">
+                                                                    <Storyboard>
+                                                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="selectedColor" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                                            <SplineDoubleKeyFrame KeyTime="00:00:00.000" Value="1"/>
+                                                                        </DoubleAnimationUsingKeyFrames>
+                                                                    </Storyboard>
+                                                                </VisualState>
+                                                            </VisualStateGroup>
+                                                        </VisualStateManager.VisualStateGroups>
+
+                                                        <Border x:Name="selectedColor" BorderThickness="2" Opacity="0" BorderBrush="#FF0080FF">
+                                                            <Border.Background>
+                                                                <SolidColorBrush Color="#FF0080FF" Opacity="0.5"/>
+                                                            </Border.Background>
+                                                        </Border>
+
+                                                        <StackPanel x:Name="Item" Tag="{Binding Tag}"  Margin="12,6,0,6" Hold="Item_Hold" ManipulationStarted="Item_ManipulationStarted" ManipulationCompleted="Item_ManipulationCompleted" ManipulationDelta="Item_ManipulationDelta">
+                                                            <Image x:Name="source" Source="{Binding Source}" Stretch="Uniform"/>
+                                                            <TextBlock x:Name="name" TextWrapping="Wrap" Text="{Binding Name}" Margin="10,0" FontSize="28" Style="{StaticResource PhoneTextNormalStyle}" TextOptions.TextHintingMode="Fixed" FontFamily="Segoe WP SemiLight" Foreground="{StaticResource PhoneForegroundBrush}" TextTrimming="None" VerticalAlignment="Top" MaxHeight="75"/>
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                    </DataTemplate>
+                                </toolkit:LongListMultiSelector.ItemTemplate>
+                            </toolkit:LongListMultiSelector>
+                        </Grid>
+                    </phone:PivotItem>
+                    <phone:PivotItem CacheMode="{x:Null}">
+                        <phone:PivotItem.Header>
+                            <TextBlock Text="Recent places" FontSize="50"/>
+                        </phone:PivotItem.Header>
+                        <Grid>
+                            <toolkit:LongListMultiSelector x:Name="recentPlaces">
+                                <toolkit:LongListMultiSelector.ItemTemplate>
+                                    <DataTemplate>
+                                        <Button>
+                                            <Button.Template>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Grid>
+                                                        <VisualStateManager.VisualStateGroups>
+                                                            <VisualStateGroup x:Name="CommonStates">
+                                                                <VisualState x:Name="Normal"/>
+                                                                <VisualState x:Name="Pressed">
+                                                                    <Storyboard>
+                                                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="selectedColor" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                                            <SplineDoubleKeyFrame KeyTime="00:00:00.000" Value="1"/>
+                                                                        </DoubleAnimationUsingKeyFrames>
+                                                                    </Storyboard>
+                                                                </VisualState>
+                                                            </VisualStateGroup>
+                                                        </VisualStateManager.VisualStateGroups>
+
+                                                        <Border x:Name="selectedColor" BorderThickness="2" Opacity="0" BorderBrush="#FF0080FF">
+                                                            <Border.Background>
+                                                                <SolidColorBrush Color="#FF0080FF" Opacity="0.5"/>
+                                                            </Border.Background>
+                                                        </Border>
+
+                                                        <StackPanel x:Name="Item" Tag="{Binding Tag}"  Margin="12,6,0,6" Hold="Item_Hold" ManipulationStarted="Item_ManipulationStarted" ManipulationCompleted="Item_ManipulationCompleted" ManipulationDelta="Item_ManipulationDelta">
+                                                            <Image x:Name="source" Source="{Binding Source}" Stretch="Uniform"/>
+                                                            <TextBlock x:Name="name" TextWrapping="Wrap" Text="{Binding Name}" Margin="10,0" FontSize="28" Style="{StaticResource PhoneTextNormalStyle}" TextOptions.TextHintingMode="Fixed" FontFamily="Segoe WP SemiLight" Foreground="{StaticResource PhoneForegroundBrush}" TextTrimming="None" VerticalAlignment="Top" MaxHeight="75"/>
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                    </DataTemplate>
+                                </toolkit:LongListMultiSelector.ItemTemplate>
+                            </toolkit:LongListMultiSelector>
+                        </Grid>
+                    </phone:PivotItem>
+
+                </phone:Pivot>
+                <TextBlock Text="Start"/>
+            </Grid>
+        </Grid>
+
+
+    </Grid>
+</phone:PhoneApplicationPage>

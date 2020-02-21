@@ -1,0 +1,604 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Zires_Explorer.Player.VideoPlayer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:coding4fun="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"    
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Zires_Explorer.Player"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d"
+    toolkit:TiltEffect.IsTiltEnabled="True" BackKeyPress="PhoneApplicationPage_BackKeyPress" ManipulationCompleted="PhoneApplicationPage_ManipulationCompleted" ManipulationStarted="PhoneApplicationPage_ManipulationStarted">
+
+    <phone:PhoneApplicationPage.Resources>
+        <Storyboard x:Name="Open_Controls" Completed="Open_Controls_Completed">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="controls" Storyboard.TargetProperty="(FrameworkElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="controlsButtomPlaneProjection" Storyboard.TargetProperty="GlobalOffsetY">
+                <EasingDoubleKeyFrame KeyTime="0" Value="186"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="controlsTopPlaneProjection" Storyboard.TargetProperty="GlobalOffsetY">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-65"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Name="Close_Controls" Completed="Close_Controls_Completed">
+            <ObjectAnimationUsingKeyFrames x:Name="objectAnimationUsingKeyFrames" Storyboard.TargetName="controls" Storyboard.TargetProperty="(FrameworkElement.Visibility)" BeginTime="0:0:0.4">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames x:Name="doubleAnimationUsingKeyFrames_1" Storyboard.TargetName="controlsButtomPlaneProjection" Storyboard.TargetProperty="GlobalOffsetY">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="186">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames x:Name="doubleAnimationUsingKeyFrames_2" Storyboard.TargetName="controlsTopPlaneProjection" Storyboard.TargetProperty="GlobalOffsetY">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-65">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+        <Storyboard x:Name="Open_Zoompage">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="zoomPage" Storyboard.TargetProperty="(FrameworkElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ZoomPlaneProjection" Storyboard.TargetProperty="GlobalOffsetX">
+                <EasingDoubleKeyFrame KeyTime="0" Value="300"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjection1" Storyboard.TargetProperty="GlobalOffsetX">
+                <EasingDoubleKeyFrame KeyTime="0" Value="300"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjection2" Storyboard.TargetProperty="GlobalOffsetX" BeginTime="0:0:0.040">
+                <EasingDoubleKeyFrame KeyTime="0" Value="300"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjection3" Storyboard.TargetProperty="GlobalOffsetX" BeginTime="0:0:0.080">
+                <EasingDoubleKeyFrame KeyTime="0" Value="300"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjection4" Storyboard.TargetProperty="GlobalOffsetX" BeginTime="0:0:0.120">
+                <EasingDoubleKeyFrame KeyTime="0" Value="300"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjection5" Storyboard.TargetProperty="GlobalOffsetX" BeginTime="0:0:0.160">
+                <EasingDoubleKeyFrame KeyTime="0" Value="300"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+        <Storyboard x:Name="Close_Zoompage">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="zoomPage" Storyboard.TargetProperty="(FrameworkElement.Visibility)" BeginTime="0:0:0.2">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ZoomPlaneProjection" Storyboard.TargetProperty="GlobalOffsetX">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="300">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjection1" Storyboard.TargetProperty="GlobalOffsetX" BeginTime="0:0:0.2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="300"/>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjection2" Storyboard.TargetProperty="GlobalOffsetX" BeginTime="0:0:0.2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="300"/>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjection3" Storyboard.TargetProperty="GlobalOffsetX" BeginTime="0:0:0.2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="300"/>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjection4" Storyboard.TargetProperty="GlobalOffsetX" BeginTime="0:0:0.2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="300"/>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjection5" Storyboard.TargetProperty="GlobalOffsetX" BeginTime="0:0:0.2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="300"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Name="Open_detailsPage">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="detailsPage" Storyboard.TargetProperty="(FrameworkElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjectionDetails" Storyboard.TargetProperty="GlobalOffsetX">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-400"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Name="Close_detailsPage">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="detailsPage" Storyboard.TargetProperty="(FrameworkElement.Visibility)" BeginTime="0:0:0.3">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjectionDetails" Storyboard.TargetProperty="GlobalOffsetX">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-400">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Black">
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="background" Tap="background_Tap">
+            <ScrollViewer x:Name="ContentPanel" Tap="ContentPanel_Tap" ManipulationDelta="ContentPanel_ManipulationDelta" ManipulationStarted="ContentPanel_ManipulationStarted" VerticalScrollBarVisibility="Disabled" Loaded="ContentPanel_Loaded" >
+                <MediaElement x:Name="player" MediaOpened="player_MediaOpened" MediaFailed="player_MediaFailed" MediaEnded="player_MediaEnded" RenderTransformOrigin="0,0" Balance="2" Volume="2" Height="480" Width="800" HorizontalAlignment="Center" VerticalAlignment="Center" Position="{Binding nowPositionOfPlayer, Mode=TwoWay}" DownloadProgressChanged="player_DownloadProgressChanged" MarkerReached="player_MarkerReached" CurrentStateChanged="player_CurrentStateChanged"/>
+            </ScrollViewer>
+            <Grid x:Name="controls">
+                <Grid x:Name="AudioControls" Height="186" VerticalAlignment="Bottom">
+                    <Grid.Projection>
+                        <PlaneProjection x:Name="controlsButtomPlaneProjection" GlobalOffsetY="0"/>
+                    </Grid.Projection>
+                    <Grid.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.4"/>
+                    </Grid.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="9,0,0,153" HorizontalAlignment="Left" Width="130">
+                        <TextBlock x:Name="durationHours" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" FontSize="25" Text="{Binding Position.Hours, ElementName=player, StringFormat=' {0:D1}:'}" TextAlignment="Right">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="#DEFFFFFF"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBlock x:Name="durationMinutes" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-6,0,0,0" FontSize="25" Text="{Binding Position.Minutes, ElementName=player, StringFormat=' {0:D1}:'}" Padding="0" FlowDirection="LeftToRight" LineHeight="0" FontStyle="Normal" FontWeight="Normal" FontStretch="Normal" TextTrimming="None" TextWrapping="NoWrap" TextOptions.TextHintingMode="Fixed">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="#DEFFFFFF"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBlock x:Name="durationSeconds" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-7,0,0,0" FontSize="25" Text="{Binding Position.Seconds, ElementName=player, StringFormat=' {0:D1}' }">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="#DEFFFFFF"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                    </StackPanel>
+
+                    <TextBlock x:Name="Dimensions" Margin="157,3,143,0" Text="Dimensions: 1920 × 1080" FontSize="22" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="0" Width="500" Foreground="#DEFFFFFF"/>
+
+                    <TextBlock x:Name="lenght" VerticalAlignment="Top" FontSize="25" Text="0:0:0" HorizontalAlignment="Right" Margin="0,0,18,0" TextAlignment="Right">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="#DEFFFFFF"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+
+                    <Slider x:Name="slider" Margin="0,18,0,86" ManipulationStarted="slider_ManipulationStarted" ManipulationDelta="slider_ManipulationDelta" ManipulationCompleted="slider_ManipulationCompleted" Loaded="slider_Loaded">
+                        <Slider.Background>
+                            <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                        </Slider.Background>
+                    </Slider>
+
+                    <Button x:Name="play" HorizontalAlignment="Center" Margin="353,82,352,0" Width="95" Height="95" VerticalAlignment="Top" Click="play_Click" Visibility="Collapsed">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border  CornerRadius="203"  
+            					        BorderThickness="5"  
+            					        BorderBrush="{StaticResource PhoneAccentBrush}"       
+            					        Margin="0,0,0,0"              
+            					        Padding="5">
+                                    <Border.Background>
+                                        <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Player Play.png"/>
+                                    </Border.Background>
+                                </Border>
+
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+                    <Button x:Name="pause" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="353,282,352,-191" Height="95" Width="95" Click="pause_Click">
+                        <Button.Projection>
+                            <PlaneProjection x:Name="pau" GlobalOffsetY="-200"/>
+                        </Button.Projection>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border  CornerRadius="203"  
+            					        BorderThickness="5"  
+            					        BorderBrush="{StaticResource PhoneAccentBrush}"       
+            					        Margin="0,0,0,0"              
+            					        Padding="5">
+                                    <Border.Background>
+                                        <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Player Pause.png"/>
+                                    </Border.Background>
+                                </Border>
+
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button x:Name="stop" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="243,288,472,-187" Height="85" Width="85" Click="stop_Click">
+                        <Button.Projection>
+                            <PlaneProjection x:Name="sto" GlobalOffsetY="-200"/>
+                        </Button.Projection>
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Player Stop.png"/>
+                        </Button.Background>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border  CornerRadius="203"  
+            					        BorderThickness="5"  
+            					        BorderBrush="{StaticResource PhoneAccentBrush}"       
+            					        Margin="0,0,0,0"              
+            					        Padding="5">
+                                    <Border.Background>
+                                        <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Player Stop.png"/>
+                                    </Border.Background>
+                                </Border>
+
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button x:Name="next" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="473,288,242,-187" Height="85" Width="85" Click="next_Click" RenderTransformOrigin="0.5,0.5">
+                        <Button.Projection>
+                            <PlaneProjection x:Name="nex" GlobalOffsetY="-200"/>
+                        </Button.Projection>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border  CornerRadius="203"  
+            					        BorderThickness="5"  
+            					        BorderBrush="{StaticResource PhoneAccentBrush}"       
+            					        Margin="0,0,0,0"              
+            					        Padding="5">
+                                    <Border.Background>
+                                        <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Player Next.png"/>
+                                    </Border.Background>
+                                </Border>
+
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button x:Name="previous" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="133,288,582,-187" Height="85" Width="85" Click="previous_Click">
+                        <Button.Projection>
+                            <PlaneProjection x:Name="pre" GlobalOffsetY="-200"/>
+                        </Button.Projection>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border  CornerRadius="203"  
+            					        BorderThickness="5"  
+            					        BorderBrush="{StaticResource PhoneAccentBrush}"       
+            					        Margin="0,0,0,0"              
+            					        Padding="5">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="/Assets/PlayerIcons/Symbol Player Previous.png"/>
+                                    </Border.Background>
+                                </Border>
+
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button x:Name="inFo" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="23,288,692,-187" Height="85" Width="85" Click="inFo_Click">
+                        <Button.Projection>
+                            <PlaneProjection x:Name="pre1" GlobalOffsetY="-200"/>
+                        </Button.Projection>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border CornerRadius="203">
+                                    <Border.Background>
+                                        <SolidColorBrush Color="Black" Opacity="0.5"/>
+                                    </Border.Background>
+                                    <Border  CornerRadius="203"  
+                    				        BorderThickness="5"  
+                    				        BorderBrush="{StaticResource PhoneAccentBrush}"       
+                    				        Margin="0,0,0,0"              
+                    				        Padding="5">
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="/Assets/PlayerIcons/Symbol Info.png"/>
+                                        </Border.Background>
+                                    </Border>
+                                </Border>
+
+
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="zoom" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="692,288,23,-187" Height="85" Width="85" Background="{x:Null}" Click="zoom_Click">
+                        <Button.Projection>
+                            <PlaneProjection x:Name="sto1" GlobalOffsetY="-200"/>
+                        </Button.Projection>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border  CornerRadius="203"  
+                    				    BorderThickness="5"  
+                    				    BorderBrush="{StaticResource PhoneAccentBrush}"       
+                    				    Margin="0,0,0,0"              
+                    				    Padding="5">
+                                    <Border.Background>
+                                        <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Zoom.png"/>
+                                    </Border.Background>
+                                </Border>
+
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <ToggleButton x:Name="Stretch" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="583,288,132,-187" Height="85" Width="85" Background="{x:Null}" Checked="Stretch_Checked" Unchecked="Stretch_Unchecked" Click="Stretch_Click">
+                        <ToggleButton.Projection>
+                            <PlaneProjection x:Name="Stre" GlobalOffsetY="-200"/>
+                        </ToggleButton.Projection>
+                        <ToggleButton.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal"/>
+                                            <VisualState x:Name="Checked">
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="uniForm" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                        <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="fill" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                        <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Collapsed"/>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+
+                                    <Border x:Name="fill"  CornerRadius="100"  
+								        BorderThickness="5"  
+								        BorderBrush="{StaticResource PhoneAccentBrush}"       
+								        Margin="0,0,0,0"              
+								        Padding="5">
+                                        <Border.Background>
+                                            <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Maximize.png"/>
+                                        </Border.Background>
+                                    </Border>
+                                    <Border x:Name="uniForm"  CornerRadius="100"  
+								        BorderThickness="5"  
+								        BorderBrush="{StaticResource PhoneAccentBrush}"       
+								        Margin="0,0,0,0"              
+								        Padding="5" Visibility="Collapsed">
+                                        <Border.Background>
+                                            <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Minimize.png"/>
+                                        </Border.Background>
+                                    </Border>
+                                </Grid>
+                            </ControlTemplate>
+                        </ToggleButton.Template>
+                    </ToggleButton>
+                </Grid>
+
+
+                <Grid Height="65" VerticalAlignment="Top">
+                    <Grid.Projection>
+                        <PlaneProjection x:Name="controlsTopPlaneProjection" GlobalOffsetY="0"/>
+                    </Grid.Projection>
+                    <Grid.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.4"/>
+                    </Grid.Background>
+
+                    <TextBlock x:Name="name" VerticalAlignment="Top" FontSize="30" Margin="15,10,120,0" Foreground="White" Text="Filfbgb fgdgn dgdgbgbdgb dfggngn dgngnhnfg fgbgbmjjntgdf fgbg" TextTrimming="WordEllipsis" FontFamily="Segoe WP SemiLight"/>
+
+                    <StackPanel Margin="680,1,0,0" Orientation="Horizontal" FlowDirection="RightToLeft">
+                        <TextBlock x:Name="time" Margin="5,0,0,0" Text="20:48" FontSize="22" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <Line Fill="White" Stroke="White" Y1="55" StrokeStartLineCap="Triangle" StrokeEndLineCap="Triangle" Y2="10" Margin="5,0,0,0"/>
+
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+        </Grid>
+
+        <Border x:Name="zoomPage" Margin="500,0,0,0" HorizontalAlignment="Right" Width="300" BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="5,0,0,0" Visibility="Collapsed">
+            <Border.Background>
+                <SolidColorBrush Color="Black" Opacity="0.89999997615814209"/>
+            </Border.Background>
+            <Border.Projection>
+                <PlaneProjection x:Name="ZoomPlaneProjection" GlobalOffsetX="300"/>
+            </Border.Projection>
+            <Grid>
+                <TextBlock Text="Screen Controls:" Margin="10,24,10,416" FontSize="23" Width="170" HorizontalAlignment="Left" Foreground="#DEFFFFFF"/>
+
+                <Button x:Name="ZoomPageBack" Content="è" Margin="0,11,10,0" FontSize="35" FontFamily="Wingdings" HorizontalAlignment="Right" VerticalAlignment="Top" Width="65" Height="65" Click="ZoomPageBack_Click" Foreground="#DEFFFFFF" BorderBrush="{x:Null}">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="5" CornerRadius="100" Margin="0">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button Content="Align Centers" Margin="0,91,0,319" Click="Button_Click" Foreground="#DEFFFFFF">
+                    <Button.Projection>
+                        <PlaneProjection x:Name="PlaneProjection1" GlobalOffsetX="300"/>
+                    </Button.Projection>
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="0,3,0,0">
+                                <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button Content="Half Size (50%)" Margin="0,166,0,244" Click="Button_Click_1" Foreground="#DEFFFFFF">
+                    <Button.Projection>
+                        <PlaneProjection x:Name="PlaneProjection2" GlobalOffsetX="300"/>
+                    </Button.Projection>
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="0,3,0,0">
+                                <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button Content="Normal Size (100%)" Margin="0,241,0,169" Click="Button_Click_2" Foreground="#DEFFFFFF">
+                    <Button.Projection>
+                        <PlaneProjection x:Name="PlaneProjection3" GlobalOffsetX="300"/>
+                    </Button.Projection>
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="0,3,0,0">
+                                <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button Content="One and a Half Size (150%)" Margin="0,316,0,94" Click="Button_Click_3" Foreground="#DEFFFFFF">
+                    <Button.Projection>
+                        <PlaneProjection x:Name="PlaneProjection4" GlobalOffsetX="300"/>
+                    </Button.Projection>
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="0,3,0,0">
+                                <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button Content="Double Size (200%)" Margin="0,391,0,19" Click="Button_Click_4" Foreground="#DEFFFFFF">
+                    <Button.Projection>
+                        <PlaneProjection x:Name="PlaneProjection5" GlobalOffsetX="300"/>
+                    </Button.Projection>
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="0,3">
+                                <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </Border>
+
+        <Grid x:Name="detailsPage" Width="400" HorizontalAlignment="Left" VerticalAlignment="Center" Height="480" Visibility="Collapsed">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.9"/>
+            </Grid.Background>
+            <Grid.Projection>
+                <PlaneProjection x:Name="PlaneProjectionDetails" GlobalOffsetX="-400"/>
+            </Grid.Projection>
+            <Border BorderThickness="0,0,5,0" BorderBrush="{StaticResource PhoneAccentBrush}">
+                <ScrollViewer>
+                    <StackPanel>
+                        <Button x:Name="detailsPageBack" Content="ç" Margin="0,11,10,0" FontSize="35" FontFamily="Wingdings" HorizontalAlignment="Right" VerticalAlignment="Top" Width="65" Height="65" Click="detailsPageBack_Click" Foreground="#DEFFFFFF">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Border BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="5" Background="Black" CornerRadius="100" Margin="0">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <TextBlock Text="Name: " FontSize="25" Margin="10,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#DEFFFFFF"/>
+                        <TextBlock x:Name="detailsName" Text="Asder gdfbbfrty Arew hnvbghn " FontSize="25" Margin="10,0" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#DEFFFFFF"/>
+
+                        <TextBlock Text="Frame width: " FontSize="25" Margin="10,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#DEFFFFFF"/>
+                        <TextBlock x:Name="detailsFrameWidth" Text="4000" FontSize="25" Margin="10,0" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#DEFFFFFF"/>
+
+                        <TextBlock Text="Frame height: " FontSize="25" Margin="10,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#DEFFFFFF"/>
+                        <TextBlock x:Name="detailsFrameHeight" Text="3000" FontSize="25" Margin="10,0" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#DEFFFFFF"/>
+
+                        <TextBlock Text="Length: " FontSize="25" Margin="10,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#DEFFFFFF"/>
+                        <TextBlock x:Name="detailsLength" Text="00:24:45" FontSize="25" Margin="10,0" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#DEFFFFFF"/>
+
+                        <TextBlock Text="Folder path: " FontSize="25" Margin="10,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#DEFFFFFF"/>
+                        <TextBlock x:Name="detailsFolderPath" Text="D:\Video\Music" FontSize="25" Margin="10,0" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#DEFFFFFF"/>
+
+                        <TextBlock Text="Size: " FontSize="25" Margin="10,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#DEFFFFFF"/>
+                        <TextBlock x:Name="detailsSize" Text="159 MB" FontSize="25" Margin="10,0" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#DEFFFFFF"/>
+
+                        <TextBlock Text="Date created: " FontSize="25" Margin="10,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#DEFFFFFF"/>
+                        <TextBlock x:Name="detailsDateCreated" Text="7/14/2014 12:36 PM" FontSize="25" Margin="10,0" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#DEFFFFFF"/>
+
+                        <TextBlock Text="Last access time: " FontSize="25" Margin="10,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#DEFFFFFF"/>
+                        <TextBlock x:Name="detailsLastAccessTime" Text="8/14/2014 10:19 PM" FontSize="25" Margin="10,0,10,20" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#DEFFFFFF"/>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

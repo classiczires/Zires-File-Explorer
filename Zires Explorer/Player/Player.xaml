@@ -1,0 +1,611 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Zires_Explorer.Player"
+    xmlns:coding4fun="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:edc="clr-namespace:Microsoft.Expression.Controls;assembly=Microsoft.Expression.Drawing" x:Name="ZiresPlayer"
+    xmlns:Primitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls"
+    x:Class="Zires_Explorer.Player.Player"
+    Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False"
+    toolkit:TiltEffect.IsTiltEnabled="True">
+
+    <phone:PhoneApplicationPage.Resources>
+        <Storyboard x:Name="backAnimation_1">
+
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="nowPlaying" Storyboard.TargetProperty="(FrameworkElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="backAnimation_2">
+
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="nowPlaying" Storyboard.TargetProperty="(FrameworkElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+        <Storyboard x:Name="showcontrols">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="AudioControls" Storyboard.TargetProperty="(FrameworkElement.Visibility)" BeginTime="00:00:00">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimation Storyboard.TargetName="AudioControls" Storyboard.TargetProperty="(UIElement.Opacity)" From="0" To="100" Duration="00:00:00.500"/>
+        </Storyboard>
+
+        <Storyboard x:Name="hidecontrols">
+            <DoubleAnimation Storyboard.TargetName="AudioControls" Storyboard.TargetProperty="(UIElement.Opacity)" From="100" To="0" Duration="00:00:00.500"/>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="AudioControls" Storyboard.TargetProperty="(FrameworkElement.Visibility)" BeginTime="00:00:00.500">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Name="showAudio">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Audio" Storyboard.TargetProperty="(FrameworkElement.Visibility)" BeginTime="0:0:0">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+
+            <DoubleAnimation Storyboard.TargetName="Audio" Storyboard.TargetProperty="(UIElement.Opacity)" From="0" To="100" Duration="0:0:0.3"/>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="audioPlaneProjection" Storyboard.TargetProperty="GlobalOffsetY">
+                <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+        <Storyboard x:Name="hideAudio">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="audioPlaneProjection" Storyboard.TargetProperty="GlobalOffsetY">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="60">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimation Storyboard.TargetName="Audio" Storyboard.TargetProperty="Opacity" From="100" To="0" Duration="0:0:0.3"/>
+
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Audio" Storyboard.TargetProperty="(FrameworkElement.Visibility)" BeginTime="0:0:0.3">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Name="SongChangedAnimation">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjectionSongNameTextBlock" Storyboard.TargetProperty="GlobalOffsetX">
+                <EasingDoubleKeyFrame KeyTime="0" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjectionArtistTextBlock" Storyboard.TargetProperty="GlobalOffsetX" BeginTime="0:0:0.1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaneProjectionAlbumArt" Storyboard.TargetProperty="GlobalOffsetZ">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-400"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </phone:PhoneApplicationPage.Resources>
+
+
+    <phone:PhoneApplicationPage.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </phone:PhoneApplicationPage.FontFamily>
+    <phone:PhoneApplicationPage.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </phone:PhoneApplicationPage.FontSize>
+    <phone:PhoneApplicationPage.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush"/>
+    </phone:PhoneApplicationPage.Foreground>
+
+    <phone:PhoneApplicationPage.Projection>
+        <PlaneProjection x:Name="planeProjection" GlobalOffsetZ="0"/>
+    </phone:PhoneApplicationPage.Projection>
+
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Background.jpg"/>
+        </Grid.Background>
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Margin="0" ManipulationStarted="ContentPanel_ManipulationStarted">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <phone:Pivot x:Name="all" Margin="0,0,0,157" SelectedIndex="0" IsLocked="False" RenderTransformOrigin="0,0" Loaded="all_Loaded">
+                <phone:Pivot.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Offset="0.147" Color="#19000000"/>
+                        <GradientStop Color="#99000000"/>
+                        <GradientStop Offset="0.273"/>
+                    </LinearGradientBrush>
+                </phone:Pivot.Background>
+                <phone:PivotItem CacheMode="{x:Null}" Margin="0" Background="{x:Null}">
+                    <phone:PivotItem.Header>
+                        <Border Height="75" Width="75" Background="{StaticResource PhoneAccentBrush}">
+                            <Image Source="/Assets/PlayerIcons/NowPlaying.png"/>
+                        </Border>
+                    </phone:PivotItem.Header>
+                    <Grid>
+                        <TextBlock x:Name="sn" VerticalAlignment="Top" FontSize="30" Margin="16,29,4,0" Foreground="White">
+                            <TextBlock.Projection>
+                                <PlaneProjection x:Name="PlaneProjectionSongNameTextBlock" GlobalOffsetX="0"/>
+                            </TextBlock.Projection>
+                        </TextBlock>
+                        <TextBlock x:Name="sa" VerticalAlignment="Top" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="27" Margin="16,73,6,0" Height="77" Foreground="#FF999999" TextWrapping="Wrap">
+                            <TextBlock.Projection>
+                                <PlaneProjection x:Name="PlaneProjectionArtistTextBlock" GlobalOffsetX="0"/>
+                            </TextBlock.Projection>
+                        </TextBlock>
+
+                        <Border HorizontalAlignment="Left" Height="330" VerticalAlignment="Top" Width="330" Margin="16,154,0,0" Background="#FF242427">
+                            <Image x:Name="AlbumArt"  Source="/Assets/ExplorerIcons/Other/ZiresPlayer.png" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" Width="330" Height="330" VerticalAlignment="Center">
+                                <Image.Projection>
+                                    <PlaneProjection x:Name="PlaneProjectionAlbumArt" GlobalOffsetZ="0"/>
+                                </Image.Projection>
+                            </Image>
+                        </Border>
+
+                        <ToggleButton Margin="360,154,10,294" Height="110" Width="110" Content="shuffle" BorderThickness="0" FontSize="24" FontFamily="Segoe WP SemiLight" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" Foreground="White"/>
+
+                        <ToggleButton Margin="360,264,10,184" IsThreeState="True" Width="110" Height="110" Content="repeat" Checked="ToggleButton_Checked_1" Unchecked="ToggleButton_Unchecked_1" Foreground="White">
+                            <ToggleButton.Template>
+                                <ControlTemplate>
+                                    <Grid>
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal"/>
+                                                <VisualState x:Name="Checked">
+                                                    <Storyboard>
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="repeattextblock" Storyboard.TargetProperty="Text">
+                                                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="repeat this"/>
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                    </Storyboard>
+                                                </VisualState>
+                                                <VisualState x:Name="Indeterminate">
+                                                    <Storyboard>
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="repeattextblock" Storyboard.TargetProperty="Text">
+                                                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="repeat all"/>
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                    </Storyboard>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                        <TextBlock x:Name="repeattextblock" Text="repeat" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontFamily="Segoe WP SemiLight" TextWrapping="Wrap" Foreground="White"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </ToggleButton.Template>
+                        </ToggleButton>
+
+                        <Button x:Name="info" Margin="360,374,10,74" Width="110" Height="110" Click="info_Click">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Grid>
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal"/>
+                                                <VisualState x:Name="Pressed">
+                                                    <Storyboard>
+                                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="sellectedcolor" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                                                        </ObjectAnimationUsingKeyFrames>
+                                                    </Storyboard>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                        <Border x:Name="sellectedcolor" Background="{StaticResource PhoneAccentBrush}" Visibility="Collapsed"/>
+                                        <Border>
+                                            <Border.Background>
+                                                <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Info.png"/>
+                                            </Border.Background>
+                                        </Border>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                    </Grid>
+                </phone:PivotItem>
+
+                <phone:PivotItem CacheMode="{x:Null}" Margin="0" Background="{x:Null}">
+                    <phone:PivotItem.Header>
+                        <Border Height="75" Width="75" Background="{StaticResource PhoneAccentBrush}">
+                            <Image Source="/Assets/PlayerIcons/Collection.png"/>
+                        </Border>
+                    </phone:PivotItem.Header>
+
+                    <Grid>
+                        <phone:Pivot Background="{x:Null}">
+                            <phone:PivotItem CacheMode="{x:Null}" Margin="0" Foreground="White" Background="{x:Null}">
+                                <phone:PivotItem.Header>
+                                    <TextBlock Text="SONGS" FontSize="30" Foreground="White"/>
+                                </phone:PivotItem.Header>
+                                <Grid>
+                                    <phone:LongListSelector x:Name="songsList" SelectionChanged="songsList_SelectionChanged" Loaded="songsList_Loaded">
+                                        <phone:LongListSelector.ItemTemplate>
+                                            <DataTemplate>
+                                                <local:Item Tap="Item_Tap"/>
+                                            </DataTemplate>
+                                        </phone:LongListSelector.ItemTemplate>
+                                    </phone:LongListSelector>
+
+                                </Grid>
+                            </phone:PivotItem>
+                            <phone:PivotItem CacheMode="{x:Null}" Margin="13,0,0,0" Foreground="White">
+                                <phone:PivotItem.Header>
+                                    <TextBlock Text="ARTIST" FontSize="30" Foreground="White"/>
+                                </phone:PivotItem.Header>
+                                <Grid/>
+                            </phone:PivotItem>
+                            <phone:PivotItem CacheMode="{x:Null}" Margin="13,0,0,0" Background="{x:Null}" Foreground="White">
+                                <phone:PivotItem.Header>
+                                    <TextBlock Text="ALBUMS" FontSize="30" Foreground="White"/>
+                                </phone:PivotItem.Header>
+                                <Grid>
+                                    <phone:LongListSelector x:Name="albumsList" GridCellSize="150,210" LayoutMode="Grid" SelectionChanged="albumsList_SelectionChanged">
+                                        <phone:LongListSelector.ItemTemplate>
+                                            <DataTemplate>
+                                                <Button Foreground="{x:Null}">
+                                                    <Button.Template>
+                                                        <ControlTemplate>
+                                                            <Grid Width="150" Height="210" Margin="3,0,0,3" HorizontalAlignment="Center" VerticalAlignment="Center" Tap="Grid_Tap">
+                                                                <Grid.Background>
+                                                                    <SolidColorBrush Color="Black" Opacity="0.5"/>
+                                                                </Grid.Background>
+
+                                                                <VisualStateManager.VisualStateGroups>
+                                                                    <VisualStateGroup x:Name="CommonStates">
+                                                                        <VisualState x:Name="Normal"/>
+                                                                        <VisualState x:Name="Pressed">
+                                                                            <Storyboard>
+                                                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="sellectedcolor" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                                                    <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                                                                                </ObjectAnimationUsingKeyFrames>
+                                                                            </Storyboard>
+                                                                        </VisualState>
+                                                                    </VisualStateGroup>
+                                                                </VisualStateManager.VisualStateGroups>
+                                                                <Border x:Name="sellectedcolor" BorderThickness="0" Visibility="Collapsed" BorderBrush="{x:Null}">
+                                                                    <Border.Background>
+                                                                        <SolidColorBrush Color="{StaticResource PhoneAccentColor}" Opacity="1"/>
+                                                                    </Border.Background>
+                                                                </Border>
+
+                                                                <Border Width="150" Height="150" VerticalAlignment="Top">
+                                                                    <Border.Background>
+                                                                        <ImageBrush Stretch="Fill" ImageSource="/Assets/ExplorerIcons/Other/ZiresPlayer.png"/>
+                                                                    </Border.Background>
+                                                                    <Image Source="{Binding Thumbnail}"/>
+                                                                </Border>
+                                                                <coding4fun:RoundButton VerticalAlignment="Top" HorizontalAlignment="Left" Width="58" Padding="0" ButtonHeight="70" ButtonWidth="70" Stretch="Uniform" ImageSource="/Assets/AppBar/transport.play.png" Margin="-8,2,0,0" Click="RoundButton_Click" BorderBrush="{StaticResource PhoneAccentBrush}" Background="Black" Foreground="White"/>
+
+                                                                <TextBlock Text="{Binding Name}" FontFamily="Segoe WP SemiLight" FontSize="18" Padding="2,0,0,0" Margin="3,154,3,28" Height="28" >
+                                                                    <TextBlock.Foreground>
+                                                                        <SolidColorBrush Color="White"/>
+                                                                    </TextBlock.Foreground>
+                                                                </TextBlock>
+                                                                <TextBlock Text="{Binding Artist}"  FontFamily="Segoe WP SemiLight" FontSize="18" Padding="3,0,0,0" Margin="3,180,3,3" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="White" Height="27" />
+
+                                                            </Grid>
+                                                        </ControlTemplate>
+                                                    </Button.Template>
+                                                </Button>
+                                            </DataTemplate>
+                                        </phone:LongListSelector.ItemTemplate>
+                                    </phone:LongListSelector>
+
+
+                                </Grid>
+                            </phone:PivotItem>
+                            <phone:PivotItem CacheMode="{x:Null}" Margin="13,0,0,0" Foreground="White" Background="{x:Null}">
+                                <phone:PivotItem.Header>
+                                    <TextBlock Text="GENRES" FontSize="30" Foreground="White"/>
+                                </phone:PivotItem.Header>
+                                <Grid/>
+                            </phone:PivotItem>
+                        </phone:Pivot>
+                    </Grid>
+                </phone:PivotItem>
+
+                <phone:PivotItem CacheMode="{x:Null}" Margin="0">
+                    <phone:PivotItem.Header>
+                        <Border Height="75" Width="75" Background="{StaticResource PhoneAccentBrush}">
+                            <Image Source="/Assets/PlayerIcons/RecentPlayed.png"/>
+                        </Border>
+                    </phone:PivotItem.Header>
+
+                    <Grid/>
+                </phone:PivotItem>
+                <phone:PivotItem CacheMode="{x:Null}">
+                    <phone:PivotItem.Header>
+                        <Border Height="75" Width="75" Background="{StaticResource PhoneAccentBrush}">
+                            <Image Source="/Assets/PlayerIcons/FileInfo.png"/>
+                        </Border>
+                    </phone:PivotItem.Header>
+
+                </phone:PivotItem>
+
+            </phone:Pivot>
+
+        </Grid>
+
+
+
+
+
+        <Grid x:Name="AudioControls" VerticalAlignment="Bottom" Margin="0,0,0,-93">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.2"/>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="77*"/>
+                <ColumnDefinition Width="73.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <toolkit:Separator HorizontalAlignment="Left" Height="2" Margin="0" VerticalAlignment="Top" Width="480" Grid.ColumnSpan="2" Background="{StaticResource PhoneAccentBrush}"/>
+
+            <TextBlock x:Name="name" VerticalAlignment="Top" FontSize="18" Margin="125,5,125,0" Text="No name" Grid.ColumnSpan="2" TextAlignment="Center">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="White"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+
+            <TextBlock x:Name="position" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,0,0,0" FontSize="23" Height="31" Width="85" Text="00:00:00">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="White"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+
+            <TextBlock x:Name="lenght" VerticalAlignment="Top" Margin="0,0,12,0" FontSize="23" Text="00:00:00" HorizontalAlignment="Right" Width="85" Height="31" Grid.Column="1" TextAlignment="Right">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="White"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <ScrollContentPresenter/>
+            <Slider x:Name="slider" Grid.ColumnSpan="2" Margin="0,0,0,153" Height="89" VerticalAlignment="Bottom" Loaded="slider_Loaded">
+                <Slider.Foreground>
+                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                </Slider.Foreground>
+                <Slider.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                </Slider.Background>
+            </Slider>
+            <ToggleButton x:Name="playPause" HorizontalAlignment="Left" Margin="198,62,0,0" Width="85" Height="85" VerticalAlignment="Top" Click="playPause_Click" Grid.ColumnSpan="2">
+                <ToggleButton.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="sellectedcolor" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Checked">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pause" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="play" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Collapsed"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <Border x:Name="sellectedcolor" CornerRadius="100" Background="{StaticResource PhoneAccentBrush}" Visibility="Collapsed"/>
+                            <Border x:Name="play"  CornerRadius="100"  
+								BorderThickness="5"  
+								BorderBrush="{StaticResource PhoneAccentBrush}"       
+								Margin="0,0,0,0"              
+								Padding="5">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Player Play.png"/>
+                                </Border.Background>
+                            </Border>
+                            <Border x:Name="pause"  CornerRadius="100"  
+								BorderThickness="5"  
+								BorderBrush="{StaticResource PhoneAccentBrush}"       
+								Margin="0,0,0,0"              
+								Padding="5" Visibility="Collapsed">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Player Pause.png"/>
+                                </Border.Background>
+                            </Border>
+                        </Grid>
+
+                    </ControlTemplate>
+                </ToggleButton.Template>
+            </ToggleButton>
+
+            <Button x:Name="volumeButton" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,267,16,-92" Height="75" Width="75" Click="volumeButton_Click" Grid.Column="1">
+                <Button.Projection>
+                    <PlaneProjection x:Name="sto" GlobalOffsetY="-200"/>
+                </Button.Projection>
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Player Stop.png"/>
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="sellectedcolor" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="sellectedcolor" CornerRadius="100" Background="{StaticResource PhoneAccentBrush}" Visibility="Collapsed"/>
+                            <Border  CornerRadius="100"  
+								BorderThickness="5"  
+								BorderBrush="{StaticResource PhoneAccentBrush}"       
+								Margin="0,0,0,0"              
+								Padding="5">
+                                <Border.Background>
+                                    <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/PlayerIcons/Volume/Volume1.png"/>
+                                </Border.Background>
+                            </Border>
+                        </Grid>
+
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="goToNowPlaying" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,67,154,0" Height="75" Width="75" Click="goToNowPlaying_Click">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Player Stop.png"/>
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="sellectedcolor" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="sellectedcolor" CornerRadius="100" Background="{StaticResource PhoneAccentBrush}" Visibility="Collapsed"/>
+                            <Border  CornerRadius="100"  
+								BorderThickness="5"  
+								BorderBrush="{StaticResource PhoneAccentBrush}"       
+								Margin="0,0,0,0"              
+								Padding="5">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/NowPlaying.png"/>
+                                </Border.Background>
+                            </Border>
+                        </Grid>
+
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+            <Button x:Name="next" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,267,0,-92" Height="75" Width="75" Click="next_Click" Grid.Column="1">
+                <Button.Projection>
+                    <PlaneProjection x:Name="nex" GlobalOffsetY="-200"/>
+                </Button.Projection>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="sellectedcolor" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="sellectedcolor" CornerRadius="100" Background="{StaticResource PhoneAccentBrush}" Visibility="Collapsed"/>
+                            <Border  CornerRadius="100"  
+								BorderThickness="5"  
+								BorderBrush="{StaticResource PhoneAccentBrush}"       
+								Margin="0,0,0,0"              
+								Padding="5">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Player Next.png"/>
+                                </Border.Background>
+                            </Border>
+                        </Grid>
+
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="previous" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,267,63,-92" Height="75" Width="75" Click="previous_Click">
+                <Button.Projection>
+                    <PlaneProjection x:Name="pre" GlobalOffsetY="-200"/>
+                </Button.Projection>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="sellectedcolor" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="sellectedcolor" CornerRadius="100" Background="{StaticResource PhoneAccentBrush}" Visibility="Collapsed"/>
+                            <Border  CornerRadius="100"  
+								BorderThickness="5"  
+								BorderBrush="{StaticResource PhoneAccentBrush}"       
+								Margin="0,0,0,0"              
+								Padding="5">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Assets/PlayerIcons/Symbol Player Previous.png"/>
+                                </Border.Background>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+        <Grid x:Name="Audio" Margin="341,136,39,159" Background="Black" Visibility="Collapsed">
+            <Grid.Projection>
+                <PlaneProjection x:Name="audioPlaneProjection" GlobalOffsetY="60"/>
+            </Grid.Projection>
+            <Border x:Name="audioBorder" BorderThickness="5" BorderBrush="{StaticResource PhoneAccentBrush}"/>
+            <Slider  x:Name="vol" Margin="-5,58,-5,81" Maximum="100" ManipulationStarted="vol_ManipulationStarted" ValueChanged="vol_ValueChanged" Orientation="Vertical" Value="100"/>
+            <Image x:Name="imageIsMutedNo" Source="/Assets/PlayerIcons/Volume/Volume1.png" Tap="imageIsMutedNo_Tap" Height="81" VerticalAlignment="Bottom"/>
+            <Image x:Name="imageIsMutedYes" Height="81" VerticalAlignment="Bottom" Source="/Assets/PlayerIcons/Volume/VolumeMute.png" Tap="imageIsMutedYes_Tap" Visibility="Collapsed"/>
+            <TextBlock x:Name="volumeValue" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Height="43" FontSize="36" TextAlignment="Center" Margin="0,8,0,0" Foreground="White"/>
+        </Grid>
+
+    </Grid>
+</phone:PhoneApplicationPage>

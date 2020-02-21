@@ -1,0 +1,6 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="Zires Explorer" EntryPointType="Zires_Explorer.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="Zires Explorer" Source="Zires Explorer.dll" />
+    <AssemblyPart x:Name="Microsoft.Expression.Drawing" Source="Microsoft.Expression.Drawing.dll" />
+  </Deployment.Parts>
+</Deployment>

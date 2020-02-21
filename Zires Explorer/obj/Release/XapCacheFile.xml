@@ -1,0 +1,82 @@
+﻿<xapCache source="D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Zires Explorer.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="6/11/2015 12:28:09 PM">
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.dll" archivePath="Zires Explorer.dll" lastWriteTime="6/11/2015 12:28:08 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\AppBar\close.png" archivePath="Assets\AppBar\close.png" lastWriteTime="6/3/2014 12:32:56 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\AppBar\delete.png" archivePath="Assets\AppBar\delete.png" lastWriteTime="1/1/2013 6:27:00 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\AppBar\settings.png" archivePath="Assets\AppBar\settings.png" lastWriteTime="1/1/2013 6:27:00 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\AppBar\Info.png" archivePath="Assets\AppBar\Info.png" lastWriteTime="6/1/2014 5:39:54 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\AppBar\save.png" archivePath="Assets\AppBar\save.png" lastWriteTime="1/1/2013 6:27:00 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\AppBar\share.png" archivePath="Assets\AppBar\share.png" lastWriteTime="1/1/2013 6:27:00 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\AppBar\transport.pause.png" archivePath="Assets\AppBar\transport.pause.png" lastWriteTime="1/1/2013 6:27:00 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\AppBar\transport.play.png" archivePath="Assets\AppBar\transport.play.png" lastWriteTime="1/1/2013 6:27:00 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\Background.jpg" archivePath="Assets\Background.jpg" lastWriteTime="8/9/2014 12:00:36 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Files\Excel.PNG" archivePath="Assets\ExplorerIcons\Files\Excel.PNG" lastWriteTime="5/20/2014 4:04:00 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Files\Word.png" archivePath="Assets\ExplorerIcons\Files\Word.png" lastWriteTime="5/20/2014 4:04:00 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Other\Symbol Home.png" archivePath="Assets\ExplorerIcons\Other\Symbol Home.png" lastWriteTime="7/29/2014 1:33:40 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\Go.png" archivePath="Assets\Go.png" lastWriteTime="5/11/2014 4:38:54 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Applications\AdobeAcrobatReader.png" archivePath="Assets\ExplorerIcons\Applications\AdobeAcrobatReader.png" lastWriteTime="5/20/2014 3:48:16 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Applications\Excel.PNG" archivePath="Assets\ExplorerIcons\Applications\Excel.PNG" lastWriteTime="5/20/2014 3:36:30 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Applications\Internet_Explorer.PNG" archivePath="Assets\ExplorerIcons\Applications\Internet_Explorer.PNG" lastWriteTime="5/20/2014 2:40:44 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Applications\Windows Phone Player.PNG" archivePath="Assets\ExplorerIcons\Applications\Windows Phone Player.PNG" lastWriteTime="5/20/2014 2:40:44 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Applications\Word.PNG" archivePath="Assets\ExplorerIcons\Applications\Word.PNG" lastWriteTime="5/20/2014 3:43:32 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Drives\Drive(C).PNG" archivePath="Assets\ExplorerIcons\Drives\Drive(C).PNG" lastWriteTime="5/20/2014 2:40:58 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Drives\Drive(D).PNG" archivePath="Assets\ExplorerIcons\Drives\Drive(D).PNG" lastWriteTime="5/20/2014 2:40:58 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Files\File(Dll).PNG" archivePath="Assets\ExplorerIcons\Files\File(Dll).PNG" lastWriteTime="5/20/2014 2:42:04 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Files\File.PNG" archivePath="Assets\ExplorerIcons\Files\File.PNG" lastWriteTime="5/20/2014 2:42:04 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Files\Music.PNG" archivePath="Assets\ExplorerIcons\Files\Music.PNG" lastWriteTime="5/20/2014 2:42:04 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Files\Picture(BMP).PNG" archivePath="Assets\ExplorerIcons\Files\Picture(BMP).PNG" lastWriteTime="5/20/2014 2:42:04 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Files\Picture(JPG).PNG" archivePath="Assets\ExplorerIcons\Files\Picture(JPG).PNG" lastWriteTime="5/20/2014 2:42:04 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Files\Picture(PNG).PNG" archivePath="Assets\ExplorerIcons\Files\Picture(PNG).PNG" lastWriteTime="5/20/2014 2:42:04 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Files\Video.PNG" archivePath="Assets\ExplorerIcons\Files\Video.PNG" lastWriteTime="5/20/2014 2:42:04 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Files\Video_Thumbnail(16_9).PNG" archivePath="Assets\ExplorerIcons\Files\Video_Thumbnail(16_9).PNG" lastWriteTime="5/20/2014 2:42:04 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Files\Video_Thumbnail(4_3).PNG" archivePath="Assets\ExplorerIcons\Files\Video_Thumbnail(4_3).PNG" lastWriteTime="5/20/2014 2:42:04 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Files\Zip.PNG" archivePath="Assets\ExplorerIcons\Files\Zip.PNG" lastWriteTime="5/20/2014 2:42:04 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Folders\Folder(Documents).PNG" archivePath="Assets\ExplorerIcons\Folders\Folder(Documents).PNG" lastWriteTime="5/20/2014 2:42:26 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Folders\Folder(Downloads).PNG" archivePath="Assets\ExplorerIcons\Folders\Folder(Downloads).PNG" lastWriteTime="5/20/2014 2:42:26 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Folders\Folder(Empty).PNG" archivePath="Assets\ExplorerIcons\Folders\Folder(Empty).PNG" lastWriteTime="5/20/2014 2:42:26 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Folders\Folder(Fill).PNG" archivePath="Assets\ExplorerIcons\Folders\Folder(Fill).PNG" lastWriteTime="5/20/2014 2:42:26 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Folders\Folder(Music).PNG" archivePath="Assets\ExplorerIcons\Folders\Folder(Music).PNG" lastWriteTime="5/20/2014 2:42:26 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Folders\Folder(Pictures).PNG" archivePath="Assets\ExplorerIcons\Folders\Folder(Pictures).PNG" lastWriteTime="5/20/2014 2:42:26 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Folders\Folder(Videos).PNG" archivePath="Assets\ExplorerIcons\Folders\Folder(Videos).PNG" lastWriteTime="5/20/2014 2:42:26 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\ExplorerIcons\Other\ZiresPlayer.png" archivePath="Assets\ExplorerIcons\Other\ZiresPlayer.png" lastWriteTime="7/26/2014 10:20:24 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\HoldMenuIcons\Copy.png" archivePath="Assets\HoldMenuIcons\Copy.png" lastWriteTime="7/15/2014 12:37:12 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\HoldMenuIcons\Cut.png" archivePath="Assets\HoldMenuIcons\Cut.png" lastWriteTime="7/15/2014 12:37:12 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\HoldMenuIcons\Delete.png" archivePath="Assets\HoldMenuIcons\Delete.png" lastWriteTime="7/15/2014 12:37:12 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\HoldMenuIcons\Info.png" archivePath="Assets\HoldMenuIcons\Info.png" lastWriteTime="7/15/2014 12:37:12 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\HoldMenuIcons\Pin.png" archivePath="Assets\HoldMenuIcons\Pin.png" lastWriteTime="7/15/2014 12:37:12 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\HoldMenuIcons\Share.png" archivePath="Assets\HoldMenuIcons\Share.png" lastWriteTime="7/15/2014 12:37:12 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Collection.png" archivePath="Assets\PlayerIcons\Collection.png" lastWriteTime="7/6/2014 3:07:18 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\FileInfo.png" archivePath="Assets\PlayerIcons\FileInfo.png" lastWriteTime="7/6/2014 3:07:18 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\NowPlaying.png" archivePath="Assets\PlayerIcons\NowPlaying.png" lastWriteTime="7/5/2014 5:11:44 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\RecentPlayed.png" archivePath="Assets\PlayerIcons\RecentPlayed.png" lastWriteTime="7/6/2014 3:11:02 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Symbol Info.png" archivePath="Assets\PlayerIcons\Symbol Info.png" lastWriteTime="7/26/2014 9:39:14 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Symbol Maximize.png" archivePath="Assets\PlayerIcons\Symbol Maximize.png" lastWriteTime="6/14/2014 7:25:58 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Symbol Minimize.png" archivePath="Assets\PlayerIcons\Symbol Minimize.png" lastWriteTime="6/14/2014 7:25:58 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Symbol Music.png" archivePath="Assets\PlayerIcons\Symbol Music.png" lastWriteTime="7/7/2014 12:17:00 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Symbol Zoom.png" archivePath="Assets\PlayerIcons\Symbol Zoom.png" lastWriteTime="7/14/2014 3:45:26 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Volume\Volume1.png" archivePath="Assets\PlayerIcons\Volume\Volume1.png" lastWriteTime="5/21/2014 12:42:04 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Volume\Volume2.png" archivePath="Assets\PlayerIcons\Volume\Volume2.png" lastWriteTime="5/21/2014 12:42:24 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Volume\Volume3.png" archivePath="Assets\PlayerIcons\Volume\Volume3.png" lastWriteTime="5/21/2014 12:42:40 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Volume\Volume4.png" archivePath="Assets\PlayerIcons\Volume\Volume4.png" lastWriteTime="5/21/2014 12:43:14 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Volume\VolumeMute.png" archivePath="Assets\PlayerIcons\Volume\VolumeMute.png" lastWriteTime="5/21/2014 12:44:30 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Symbol Player Next.png" archivePath="Assets\PlayerIcons\Symbol Player Next.png" lastWriteTime="5/22/2014 1:03:04 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Symbol Player Pause.png" archivePath="Assets\PlayerIcons\Symbol Player Pause.png" lastWriteTime="5/22/2014 1:03:04 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Symbol Player Play.png" archivePath="Assets\PlayerIcons\Symbol Player Play.png" lastWriteTime="5/22/2014 1:03:04 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Symbol Player Previous.png" archivePath="Assets\PlayerIcons\Symbol Player Previous.png" lastWriteTime="5/22/2014 1:03:04 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\PlayerIcons\Symbol Player Stop.png" archivePath="Assets\PlayerIcons\Symbol Player Stop.png" lastWriteTime="5/22/2014 1:03:04 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="10/1/2014 11:41:34 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Player\Player.xaml.cs" archivePath="Player\Player.xaml.cs" lastWriteTime="10/1/2014 11:29:54 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\AudioPlayBackAgent\Bin\Release\AudioPlayBackAgent.dll" archivePath="AudioPlayBackAgent.dll" lastWriteTime="6/8/2015 4:24:27 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Coding4Fun.Phone.Controls.dll" archivePath="Coding4Fun.Phone.Controls.dll" lastWriteTime="8/7/2013 10:03:52 PM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\MSAdvertising\6.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.dll" archivePath="Microsoft.Advertising.Mobile.dll" lastWriteTime="9/16/2013 11:09:00 AM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\MSAdvertising\6.1\References\CommonConfiguration\neutral\microsoft.advertising.mobile.ui.dll" archivePath="microsoft.advertising.mobile.ui.dll" lastWriteTime="9/16/2013 11:09:00 AM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Windows Phone\v8.0\Libraries\Microsoft.Expression.Drawing.dll" archivePath="Microsoft.Expression.Drawing.dll" lastWriteTime="9/25/2012 1:41:02 AM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\Libraries\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="1/1/2013 5:57:00 PM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\Libraries\Microsoft.Phone.Controls.Maps.dll" archivePath="Microsoft.Phone.Controls.Maps.dll" lastWriteTime="1/1/2013 5:57:00 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\packages\WPtoolkit.4.2012.10.30\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="5/15/2014 3:33:20 AM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Windows Phone\v8.0\Libraries\System.Windows.Interactivity.dll" archivePath="System.Windows.Interactivity.dll" lastWriteTime="9/25/2012 1:41:02 AM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\MSAdvertising\6.1\References\CommonConfiguration\neutral\Microsoft.Advertising.Mobile.xml" archivePath="Microsoft.Advertising.Mobile.xml" lastWriteTime="9/16/2013 11:13:06 AM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\MSAdvertising\6.1\References\CommonConfiguration\neutral\microsoft.advertising.mobile.ui.xml" archivePath="microsoft.advertising.mobile.ui.xml" lastWriteTime="9/16/2013 11:13:06 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\Tiles\ZiresExplorerIcon.PNG" archivePath="Assets\Tiles\ZiresExplorerIcon.PNG" lastWriteTime="7/25/2014 11:45:46 PM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Assets\Tiles\ZiresExplorerIconSmall.png" archivePath="Assets\Tiles\ZiresExplorerIconSmall.png" lastWriteTime="12/8/2014 4:22:59 AM" />
+  <file source="D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="6/11/2015 12:28:09 PM" />
+</xapCache>

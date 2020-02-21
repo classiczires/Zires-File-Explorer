@@ -1,0 +1,198 @@
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\Zires Explorer.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\Zires Explorer.pdb
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\AppManifest.xaml
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\Properties\WMAppManifest.xml
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\App.g.cs
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\MainPage.g.cs
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.g.resources
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\Zires_Explorer.Resources.AppResources.resources
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.csproj.GenerateResource.Cache
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.pdb
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\XapCacheFile.xml
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Phone.Controls.Maps.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Phone.Controls.Toolkit.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\Player\Player.g.cs
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.csprojResolveAssemblyReference.cache
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\Player\Player.xaml.cs
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Phone.Controls.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\Properties.g.cs
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\Settings.g.cs
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\Zires Explorer.xap
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Expression.Drawing.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Advertising.Mobile.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\microsoft.advertising.mobile.ui.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Advertising.Mobile.xml
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\microsoft.advertising.mobile.ui.xml
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\cs-CZ\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\da-DK\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\de-DE\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\el-GR\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\en-GB\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\es-ES\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\fi-FI\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\fr-FR\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\hu-HU\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\it-IT\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\ja-JP\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\ko-KR\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\nb-NO\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\nl-NL\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\pl-PL\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\pt-BR\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\pt-PT\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\ru-RU\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\sv-SE\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\zh-CN\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\zh-TW\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\System.Windows.Interactivity.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\de\System.Windows.Interactivity.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\en\System.Windows.Interactivity.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\es\System.Windows.Interactivity.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\it\System.Windows.Interactivity.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\ru\System.Windows.Interactivity.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\ImageViewer\ImageViewer.g.cs
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\ImageViewer\ImageViewerSettings.g.cs
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\ImageViewer\Picture.g.cs
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\AudioPlayBackAgent.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\Bin\Release\AudioPlayBackAgent.pdb
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\Zires Explorer\obj\Release\Player\VideoPlayer.g.cs
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\Player\Player.xaml.cs
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\Zires Explorer.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\Zires Explorer.pdb
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\AppManifest.xaml
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\Properties\WMAppManifest.xml
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\Zires Explorer.xap
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\AudioPlayBackAgent.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Advertising.Mobile.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\microsoft.advertising.mobile.ui.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Expression.Drawing.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Phone.Controls.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Phone.Controls.Maps.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Phone.Controls.Toolkit.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\System.Windows.Interactivity.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\AudioPlayBackAgent.pdb
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Advertising.Mobile.xml
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\microsoft.advertising.mobile.ui.xml
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\cs-CZ\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\da-DK\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\de-DE\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\el-GR\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\en-GB\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\es-ES\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\fi-FI\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\fr-FR\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\hu-HU\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\it-IT\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\ja-JP\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\ko-KR\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\nb-NO\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\nl-NL\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\pl-PL\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\pt-BR\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\pt-PT\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\ru-RU\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\sv-SE\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\zh-CN\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\zh-TW\Microsoft.Advertising.Mobile.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\de\System.Windows.Interactivity.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\en\System.Windows.Interactivity.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\es\System.Windows.Interactivity.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\fr\System.Windows.Interactivity.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\it\System.Windows.Interactivity.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\ja\System.Windows.Interactivity.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\ko\System.Windows.Interactivity.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\ru\System.Windows.Interactivity.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\Bin\Release\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.csprojResolveAssemblyReference.cache
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\App.g.cs
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\ImageViewer\ImageViewer.g.cs
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\ImageViewer\ImageViewerSettings.g.cs
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\MainPage.g.cs
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\ImageViewer\Picture.g.cs
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\Player\Player.g.cs
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\Player\VideoPlayer.g.cs
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\Properties.g.cs
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\Settings.g.cs
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.g.resources
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\Zires_Explorer.Resources.AppResources.resources
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.csproj.GenerateResource.Cache
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.dll
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.pdb
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\XapCacheFile.xml
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\ImageViewer\Gallery.g.cs
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\Player\Album.g.cs
+C:\Users\saeed\Documents\Visual Studio 2013\Projects\Zires Explorer\Zires Explorer\obj\Release\Player\Item.g.cs
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Player\Player.xaml.cs
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Zires Explorer.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Zires Explorer.pdb
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\AppManifest.xaml
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Properties\WMAppManifest.xml
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Zires Explorer.xap
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\AudioPlayBackAgent.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Advertising.Mobile.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\microsoft.advertising.mobile.ui.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Expression.Drawing.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Phone.Controls.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Phone.Controls.Maps.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Phone.Controls.Toolkit.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\System.Windows.Interactivity.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\AudioPlayBackAgent.pdb
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\Microsoft.Advertising.Mobile.xml
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\microsoft.advertising.mobile.ui.xml
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\cs-CZ\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\da-DK\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\de-DE\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\el-GR\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\en-GB\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\es-ES\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\fi-FI\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\fr-FR\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\hu-HU\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\it-IT\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\ja-JP\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\ko-KR\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\nb-NO\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\nl-NL\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\pl-PL\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\pt-BR\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\pt-PT\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\ru-RU\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\sv-SE\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\zh-CN\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\zh-TW\Microsoft.Advertising.Mobile.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\de\System.Windows.Interactivity.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\en\System.Windows.Interactivity.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\es\System.Windows.Interactivity.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\fr\System.Windows.Interactivity.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\it\System.Windows.Interactivity.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\ja\System.Windows.Interactivity.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\ko\System.Windows.Interactivity.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\ru\System.Windows.Interactivity.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\zh-Hans\System.Windows.Interactivity.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\Bin\Release\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.csprojResolveAssemblyReference.cache
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\App.g.cs
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\ImageViewer\Gallery.g.cs
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\ImageViewer\ImageViewer.g.cs
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\ImageViewer\ImageViewerSettings.g.cs
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\MainPage.g.cs
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\ImageViewer\Picture.g.cs
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\Player\Album.g.cs
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\Player\Item.g.cs
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\Player\Player.g.cs
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\Player\VideoPlayer.g.cs
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\Properties.g.cs
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\Settings.g.cs
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.g.resources
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\Zires_Explorer.Resources.AppResources.resources
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.csproj.GenerateResource.Cache
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.dll
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\Zires Explorer.pdb
+D:\Windows Phone\Zires Explorer\Zires Explorer\obj\Release\XapCacheFile.xml

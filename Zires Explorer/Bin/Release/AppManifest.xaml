@@ -1,0 +1,14 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="Zires Explorer" EntryPointType="Zires_Explorer.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="Zires Explorer" Source="Zires Explorer.dll" />
+    <AssemblyPart x:Name="AudioPlayBackAgent" Source="AudioPlayBackAgent.dll" />
+    <AssemblyPart x:Name="Coding4Fun.Phone.Controls" Source="Coding4Fun.Phone.Controls.dll" />
+    <AssemblyPart x:Name="Microsoft.Advertising.Mobile" Source="Microsoft.Advertising.Mobile.dll" />
+    <AssemblyPart x:Name="microsoft.advertising.mobile.ui" Source="microsoft.advertising.mobile.ui.dll" />
+    <AssemblyPart x:Name="Microsoft.Expression.Drawing" Source="Microsoft.Expression.Drawing.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls" Source="Microsoft.Phone.Controls.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls.Maps" Source="Microsoft.Phone.Controls.Maps.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="System.Windows.Interactivity" Source="System.Windows.Interactivity.dll" />
+  </Deployment.Parts>
+</Deployment>

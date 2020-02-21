@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FF96A410-3DA7-4F7C-BCE0-3FCA70505924}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zires_Explorer</RootNamespace>
+    <AssemblyName>Zires Explorer</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Zires Explorer.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Zires_Explorer.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <ExpressionBlendVersion>12.0.50203.70</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageViewer\Gallery.xaml.cs">
+      <DependentUpon>Gallery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageViewer\ImageViewer.xaml.cs">
+      <DependentUpon>ImageViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageViewer\ImageViewerSettings.xaml.cs">
+      <DependentUpon>ImageViewerSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageViewer\Picture.xaml.cs">
+      <DependentUpon>Picture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Player\Album.xaml.cs">
+      <DependentUpon>Album.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Player\AlbumInfo.cs" />
+    <Compile Include="Player\Item.xaml.cs">
+      <DependentUpon>Item.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Player\Player.xaml.cs">
+      <DependentUpon>Player.xaml</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Player\VideoPlayer.xaml.cs">
+      <DependentUpon>VideoPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties.xaml.cs">
+      <DependentUpon>Properties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\HomeItems.cs" />
+    <Compile Include="ViewModels\ItemViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MenuItems.cs" />
+    <Compile Include="ViewModels\SelextionList.cs" />
+    <Compile Include="Player\XnaFrameworkDispatcherService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="ImageViewer\Gallery.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImageViewer\ImageViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImageViewer\ImageViewerSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImageViewer\Picture.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Player\Album.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Player\Item.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Player\Player.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Player\VideoPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Properties.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AppBar\close.png" />
+    <Content Include="Assets\AppBar\delete.png" />
+    <Content Include="Assets\AppBar\settings.png" />
+    <Content Include="Assets\AppBar\Info.png" />
+    <Content Include="Assets\AppBar\save.png" />
+    <Content Include="Assets\AppBar\share.png" />
+    <Content Include="Assets\AppBar\transport.pause.png" />
+    <Content Include="Assets\AppBar\transport.play.png" />
+    <Content Include="Assets\Background.jpg" />
+    <Content Include="Assets\ExplorerIcons\Files\Excel.PNG" />
+    <Content Include="Assets\ExplorerIcons\Files\Word.png" />
+    <Content Include="Assets\ExplorerIcons\Other\Symbol Home.png" />
+    <Content Include="Assets\Go.png" />
+    <Content Include="Assets\ExplorerIcons\Applications\AdobeAcrobatReader.png" />
+    <Content Include="Assets\ExplorerIcons\Applications\Excel.PNG" />
+    <Content Include="Assets\ExplorerIcons\Applications\Internet_Explorer.PNG" />
+    <Content Include="Assets\ExplorerIcons\Applications\Windows Phone Player.PNG" />
+    <Content Include="Assets\ExplorerIcons\Applications\Word.PNG" />
+    <Content Include="Assets\ExplorerIcons\Drives\Drive%28C%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Drives\Drive%28D%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Files\File%28Dll%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Files\File.PNG" />
+    <Content Include="Assets\ExplorerIcons\Files\Music.PNG" />
+    <Content Include="Assets\ExplorerIcons\Files\Picture%28BMP%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Files\Picture%28JPG%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Files\Picture%28PNG%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Files\Video.PNG" />
+    <Content Include="Assets\ExplorerIcons\Files\Video_Thumbnail%2816_9%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Files\Video_Thumbnail%284_3%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Files\Zip.PNG" />
+    <Content Include="Assets\ExplorerIcons\Folders\Folder%28Documents%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Folders\Folder%28Downloads%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Folders\Folder%28Empty%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Folders\Folder%28Fill%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Folders\Folder%28Music%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Folders\Folder%28Pictures%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Folders\Folder%28Videos%29.PNG" />
+    <Content Include="Assets\ExplorerIcons\Other\ZiresPlayer.png" />
+    <Content Include="Assets\HoldMenuIcons\Copy.png" />
+    <Content Include="Assets\HoldMenuIcons\Cut.png" />
+    <Content Include="Assets\HoldMenuIcons\Delete.png" />
+    <Content Include="Assets\HoldMenuIcons\Info.png" />
+    <Content Include="Assets\HoldMenuIcons\Pin.png" />
+    <Content Include="Assets\HoldMenuIcons\Share.png" />
+    <Content Include="Assets\PlayerIcons\Collection.png" />
+    <Content Include="Assets\PlayerIcons\FileInfo.png" />
+    <Content Include="Assets\PlayerIcons\NowPlaying.png" />
+    <Content Include="Assets\PlayerIcons\RecentPlayed.png" />
+    <Content Include="Assets\PlayerIcons\Symbol Info.png" />
+    <Content Include="Assets\PlayerIcons\Symbol Maximize.png" />
+    <Content Include="Assets\PlayerIcons\Symbol Minimize.png" />
+    <Content Include="Assets\PlayerIcons\Symbol Music.png" />
+    <Content Include="Assets\PlayerIcons\Symbol Zoom.png" />
+    <Content Include="Assets\PlayerIcons\Volume\Volume1.png" />
+    <Content Include="Assets\PlayerIcons\Volume\Volume2.png" />
+    <Content Include="Assets\PlayerIcons\Volume\Volume3.png" />
+    <Content Include="Assets\PlayerIcons\Volume\Volume4.png" />
+    <Content Include="Assets\PlayerIcons\Volume\VolumeMute.png" />
+    <Content Include="Assets\PlayerIcons\Symbol Player Next.png" />
+    <Content Include="Assets\PlayerIcons\Symbol Player Pause.png" />
+    <Content Include="Assets\PlayerIcons\Symbol Player Play.png" />
+    <Content Include="Assets\PlayerIcons\Symbol Player Previous.png" />
+    <Content Include="Assets\PlayerIcons\Symbol Player Stop.png" />
+    <Content Include="Assets\Tiles\ZiresExplorerIcon.PNG" />
+    <Content Include="Assets\Tiles\ZiresExplorerIconSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Coding4Fun.Phone.Controls">
+      <HintPath>..\..\..\..\..\..\..\Desktop\Coding4Fun.Phone.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Advertising.Mobile, Version=6.2.960.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="microsoft.advertising.mobile.ui, Version=6.2.960.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Drawing" />
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Maps, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2012.10.30\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ImageViewer\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AudioPlayBackAgent\AudioPlayBackAgent.csproj">
+      <Project>{057462B0-9B05-4351-9B0F-9C247786C0AC}</Project>
+      <Name>AudioPlayBackAgent</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

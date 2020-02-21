@@ -1,0 +1,43 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Zires_Explorer.ImageViewer.Gallery"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"   
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    toolkit:TiltEffect.IsTiltEnabled="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel">
+            <phone:LongListSelector x:Name="allList" GridCellSize="154,154" LayoutMode="Grid" Background="{x:Null}">
+                <phone:LongListSelector.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="12,6,0,6">
+                            <Image Source="{Binding source}"/>
+                            <Border VerticalAlignment="Bottom">
+                                <Border.Background>
+                                    <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.6"/>
+                                </Border.Background>
+                                <TextBlock Text="{Binding name}" FontSize="18" Margin="5,0,5,0" Foreground="{StaticResource PhoneForegroundBrush}"/>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </phone:LongListSelector.ItemTemplate>
+                
+            
+            </phone:LongListSelector>
+        </Grid>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

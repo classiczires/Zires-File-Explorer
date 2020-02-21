@@ -1,0 +1,4 @@
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\ScheduledTaskAgent1\Bin\Release\ScheduledTaskAgent1.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\ScheduledTaskAgent1\Bin\Release\ScheduledTaskAgent1.pdb
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\ScheduledTaskAgent1\obj\Release\ScheduledTaskAgent1.dll
+C:\Users\Saeed.Zires\Documents\Visual Studio 2013\Projects\Player\1\Zires Explorer\ScheduledTaskAgent1\obj\Release\ScheduledTaskAgent1.pdb
